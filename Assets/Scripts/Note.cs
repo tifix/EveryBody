@@ -12,7 +12,7 @@ public class Note
 
     public GameObject sibling_anticipator = null;
 
-    public enum note_state{incoming,active,missed, hit, perfect }        
+    public enum note_state{incoming,active,missed, hit }        
 
     public Note(int position) 
     {

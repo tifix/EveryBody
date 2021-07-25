@@ -39,7 +39,6 @@ public class SongReciever : MonoBehaviour
         SpriteRenderer SR = note.sibling_anticipator.GetComponent<SpriteRenderer>();
         SR.color = Color.magenta;
         
-        //check if player input contains the note - if yes, set state to hit
 
         yield return new WaitForSeconds(note.duration);
         current_notes.Remove(note);
@@ -49,6 +48,8 @@ public class SongReciever : MonoBehaviour
         {
             SR.color = Color.red;
             note.state = Note.note_state.missed;  //timeout if missed
+            PlayerInput.instance.streak = 0;
+            PlayerInput.instance.multiplier = 1;
             yield return new WaitForSeconds(0.25f);
         }
         yield return null;
