@@ -7,76 +7,47 @@ using UnityEngine.UI;
 public class PlayerInput : MonoBehaviour
 {
     public static PlayerInput instance;
-    public SpriteRenderer feedback_sprite;
-    public SpriteRenderer rhythm_sprite;
-    public List<Note> song=new List<Note>();
-    public float BPM = 140;
-    public float beat_interval;
-    public int cur_note=0;
-    public float song_start_time;
 
-    public IEnumerator NoteRetrieval() 
-    {
-        while (cur_note<song.Count) 
-        {
-            if(Time.time>song[cur_note].start_time)   //if the time elapsed from the start of the song is longer than the song start point
-            {
-                song[cur_note].play();
-                cur_note++;
-            }
+    public SpriteRenderer feedback_spriteA;
+    public SpriteRenderer feedback_spriteS;
+    public SpriteRenderer feedback_spriteK;
+    public SpriteRenderer feedback_spriteL;
 
-            yield return new WaitForFixedUpdate();
-        }
-
-        Debug.LogWarning("song finished");
-    
-    }
-
-    public IEnumerator ExtendedPlay(Note note)
-    {
-        rhythm_sprite.color = Color.red;
-        yield return new WaitForSeconds(note.duration);
-        rhythm_sprite.color = Color.white;
-        yield return null;
-    }
-
-
-    private void Awake()
-    {
-        if (instance == null) instance = this;
-        else Destroy(this);
-
-         beat_interval = 60 / BPM;
-
-        if (song.Count<1) for (int i = 0; i < 120; i++) //filling song with default
-            {
-                song.Add(new Note(i));
-            }
-    }
-
-    public void Start()
-    {
-
-        StartCoroutine(NoteRetrieval());
-    }
+    public string cur_input="";
 
     // Update is called once per frame
     void Update()
     {
-        ReadInput();
+        cur_input = EncodeInput();
+       ShowInputFeedback();
     }
 
-    char ReadInput()
+    string EncodeInput()
     {
+        string temp = "";
+        
         if (Input.anyKey)
         {
-            if (Input.GetKey(KeyCode.A)) { feedback_sprite.color = Color.yellow; return 'a'; }
-            if (Input.GetKey(KeyCode.S)) { feedback_sprite.color = Color.red; return 's'; }
-            if (Input.GetKey(KeyCode.K)) { feedback_sprite.color = Color.blue; return 'k'; }
-            if (Input.GetKey(KeyCode.L)) { feedback_sprite.color = Color.green; return 'l'; }
-        }        //Input.GetKeyDown("space")) {; }
-        else feedback_sprite.color = Color.white;
-        return ' ';
-
+            if (Input.GetKey(KeyCode.A)) { temp += 'a'; }
+            if (Input.GetKey(KeyCode.S)) { temp += 's'; }
+            if (Input.GetKey(KeyCode.K)) { temp += 'k'; }
+            if (Input.GetKey(KeyCode.L)) { temp += 'l'; }
+        }
+        return temp;
     }
+    
+
+    //DisplayInputFeedback
+    void ShowInputFeedback() 
+    {
+        if (Input.GetKeyDown(KeyCode.A)) { feedback_spriteA.color = Color.yellow; }
+        else if (Input.GetKeyUp(KeyCode.A)) {Color t= new Color(0.97f, 1f, 0.61f); feedback_spriteA.color = t;  }
+            if (Input.GetKey(KeyCode.S)) { feedback_spriteS.color = Color.red; }
+            else if (Input.GetKeyUp(KeyCode.S)) { Color t = new Color(1, 0.72f, 0.72f); feedback_spriteS.color = t; }
+                if (Input.GetKey(KeyCode.K)) { feedback_spriteK.color = Color.blue; }
+                else if (Input.GetKeyUp(KeyCode.K)) { Color t = new Color(0.64f, 0.83f, 1f); feedback_spriteK.color = t; }
+                    if (Input.GetKey(KeyCode.L)) { feedback_spriteL.color = Color.green; }
+                    else if (Input.GetKeyUp(KeyCode.L)) { Color t = new Color(0.67f, 0.95f, 0.71f); feedback_spriteL.color = t; }
+    }
+    
 }
