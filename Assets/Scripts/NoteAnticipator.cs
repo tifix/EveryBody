@@ -39,10 +39,10 @@ public class NoteAnticipator : MonoBehaviour
 
     public GameObject SpawnAnticipationNote(GameObject note_prefab, Transform transf,Note sibling) 
     {
-        Debug.Log("spawning anticip");
+        //Debug.Log("spawning anticip");
         GameObject anticip_note = GameObject.Instantiate(note_prefab,transf.position,Quaternion.identity);
         anticip_note.transform.SetParent(instance.transform);
-        anticip_note.transform.localScale = new Vector3(3000 * sibling.duration, 324, 0);
+        anticip_note.transform.localScale = new Vector3(3000 * sibling.duration*SongReciever.instance.beat_interval, 324, 0);
         anticip_note.GetComponent<MoveAndDie>().sibling_note = sibling;
 
         return anticip_note;
@@ -50,7 +50,7 @@ public class NoteAnticipator : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) SpawnAnticipationNote(anticip_note, new Transform[] { A_pos, S_pos, K_pos, L_pos }[Random.Range(0, 4)],new Note(4));
+        if (Input.GetKeyDown(KeyCode.Space)) new Note().play(); //SpawnAnticipationNote(anticip_note, new Transform[] { A_pos, S_pos, K_pos, L_pos }[Random.Range(0, 4)],new Note(4));
         if (Input.GetKeyDown(KeyCode.LeftShift)) Time.timeScale = 0.25f;
         if (Input.GetKeyUp(KeyCode.LeftShift)) Time.timeScale = 1;
 

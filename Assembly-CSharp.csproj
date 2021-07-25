@@ -55,11 +55,13 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerInput.cs" />
-    <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\SongReciever.cs" />
     <Compile Include="Assets\Scripts\NoteAnticipator.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\ComboDisp.cs" />
+    <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\MoveAndDie.cs" />
+    <Compile Include="Assets\Scripts\Beat.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Skiddadle.txt" />
