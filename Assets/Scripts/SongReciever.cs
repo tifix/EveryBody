@@ -7,24 +7,50 @@ public class SongReciever : MonoBehaviour
     public static SongReciever instance;
     public SpriteRenderer rhythm_sprite;
 
-    public List<Note> song = new List<Note>();
+    //public List<Note> song = new List<Note>();
+    [Tooltip("Track is made up of beats (4 by default)")]
+    public List<Beat> track = new List<Beat>();
     public float BPM = 140;
     public float beat_interval;
-    public int cur_note = 0;
+
+    [HideInInspector] public List<Note> current_notes = new List<Note>();
+    [Header("Track progression")]
     public float song_start_time;
-    public List<Note> current_notes = new List<Note>();
+    private float beat_start_time;
+    private int cur_note = 0;
+    public int cur_beat = 0;
+   
 
     public IEnumerator NoteRetrieval()
     {
-        while (cur_note < song.Count)
-        {
-            if (Time.time > song[cur_note].start_time)   //if the time elapsed from the start of the song is longer than the song start point
-            {
-                song[cur_note].play();
-                cur_note++;
-            }
+        beat_start_time = song_start_time;
 
-            yield return new WaitForFixedUpdate();
+        //iterate over beats
+        while (cur_beat < track.Count)  //if cur beat is less than the last beat of the track, play it
+        {
+
+            //iterate over notes
+            while (cur_note < track[cur_beat].notes.Count) 
+            {
+                float cur_note_init = track[cur_beat].notes[cur_note].start_time;
+                yield return new WaitForFixedUpdate();
+
+                if(Time.time-beat_start_time > cur_note_init * beat_interval)
+                {
+                    track[cur_beat].notes[cur_note].play();
+                    Debug.Log(" b:" + cur_beat + " n:" + cur_note);
+                    cur_note++;
+
+                }
+            }
+            while (Time.time - song_start_time < (cur_beat+1)*beat_interval) 
+                yield return new WaitForFixedUpdate();
+            
+            cur_beat++;
+            cur_note = 0;
+            beat_start_time = Time.time;
+
+
         }
 
         Debug.LogWarning("song finished");
@@ -40,7 +66,7 @@ public class SongReciever : MonoBehaviour
         SR.color = Color.magenta;
         
 
-        yield return new WaitForSeconds(note.duration);
+        yield return new WaitForSeconds(note.duration*beat_interval);
         current_notes.Remove(note);
 
 
@@ -61,12 +87,7 @@ public class SongReciever : MonoBehaviour
         if (instance == null) instance = this;
         else Destroy(this);
 
-        beat_interval = 60 / BPM;
-
-        if (song.Count < 1) for (int i = 0; i < 120; i++) //filling song with default
-            {
-                song.Add(new Note(i));
-            }
+        beat_interval = 240 / BPM;
     }
 
     public void Start()

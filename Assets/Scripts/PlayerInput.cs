@@ -9,22 +9,23 @@ public class PlayerInput : MonoBehaviour
 {
     public static PlayerInput instance;
 
-    public SpriteRenderer feedback_spriteA;
-    public SpriteRenderer feedback_spriteS;
-    public SpriteRenderer feedback_spriteK;
-    public SpriteRenderer feedback_spriteL;
-
-    public ParticleSystem PS_a;
-    public ParticleSystem PS_s;
-    public ParticleSystem PS_k;
-    public ParticleSystem PS_l;
-
-    public Text score_text;
-
+    [Header("Connected objects")]
+        public SpriteRenderer feedback_spriteA;
+        public SpriteRenderer feedback_spriteS;
+        public SpriteRenderer feedback_spriteK;
+        public SpriteRenderer feedback_spriteL;
+            public ParticleSystem PS_a;
+            public ParticleSystem PS_s;
+            public ParticleSystem PS_k;
+            public ParticleSystem PS_l;
+                public Text score_text;
+    [Header("Scoring system")]
     public string cur_input="";
-    public int score=0;
+    public float score=0;
     public int streak=0;
     public int multiplier=1;
+    public float note_sustain_points=0.1f;
+    public float note_hit_points=10;
 
     private void Awake()
     {
@@ -36,8 +37,11 @@ public class PlayerInput : MonoBehaviour
     void Update()
     {
        cur_input = EncodeInput();
-        if (Input.anyKeyDown) CompareInputToNotes();
+        
        ShowInputFeedback();
+
+        if (Input.anyKeyDown) CompareInputToNotes();
+        if (Input.anyKey) NoteHolding();
     }
 
     string EncodeInput()
@@ -79,7 +83,7 @@ public class PlayerInput : MonoBehaviour
 
         foreach (Note note in SongReciever.instance.current_notes)
         {
-            if (ArrayUtility.Contains(cur_input.ToCharArray(), note.input))
+            if (ArrayUtility.Contains(cur_input.ToCharArray(), note.input) && note.state!=Note.note_state.hit)
             {
                 Debug.Log("Hit!");
                 note.state = Note.note_state.hit;
@@ -93,17 +97,24 @@ public class PlayerInput : MonoBehaviour
                 if (streak > 20) multiplier = 4;
                 if (streak > 50) multiplier = 5;
 
-                score += 10*multiplier;
+                score += note_hit_points*multiplier;
                 
-                score_text.text = score.ToString();
+                score_text.text = Mathf.FloorToInt(score).ToString();
             }
 
         }
     }
 
-    public void NoteHolding() 
+    public void NoteHolding()
     {
-
+        foreach (Note note in SongReciever.instance.current_notes)
+        {
+            if (ArrayUtility.Contains(cur_input.ToCharArray(), note.input) && note.state == Note.note_state.hit)
+            {
+                score += note_sustain_points * multiplier;
+                score_text.text = Mathf.FloorToInt(score).ToString();
+            }
+        }
     }
 
 }
