@@ -12,6 +12,7 @@ public class SongReciever : MonoBehaviour
     public float beat_interval;
     public int cur_note = 0;
     public float song_start_time;
+    public List<Note> current_notes = new List<Note>();
 
     public IEnumerator NoteRetrieval()
     {
@@ -33,10 +34,23 @@ public class SongReciever : MonoBehaviour
     public IEnumerator ExtendedPlay(Note note)
     {
         yield return new WaitForSeconds(1); //wait for note to travel
+        note.state = Note.note_state.active;
+        current_notes.Add(note);
         SpriteRenderer SR = note.sibling_anticipator.GetComponent<SpriteRenderer>();
         SR.color = Color.magenta;
+        
+        //check if player input contains the note - if yes, set state to hit
+
         yield return new WaitForSeconds(note.duration);
-        SR.color = Color.white;
+        current_notes.Remove(note);
+
+
+        if (note.state == Note.note_state.active) 
+        {
+            SR.color = Color.red;
+            note.state = Note.note_state.missed;  //timeout if missed
+            yield return new WaitForSeconds(0.25f);
+        }
         yield return null;
     }
 

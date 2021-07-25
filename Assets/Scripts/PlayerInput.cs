@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UI;
 
 
@@ -18,7 +19,8 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cur_input = EncodeInput();
+       cur_input = EncodeInput();
+        if (Input.anyKeyDown) CompareInputToNotes();
        ShowInputFeedback();
     }
 
@@ -49,5 +51,19 @@ public class PlayerInput : MonoBehaviour
                     if (Input.GetKey(KeyCode.L)) { feedback_spriteL.color = Color.green; }
                     else if (Input.GetKeyUp(KeyCode.L)) { Color t = new Color(0.67f, 0.95f, 0.71f); feedback_spriteL.color = t; }
     }
-    
+
+    void CompareInputToNotes()
+    {
+        foreach (Note note in SongReciever.instance.current_notes)
+        {
+            if (ArrayUtility.Contains(cur_input.ToCharArray(), note.input))
+            {
+                Debug.Log("Hit!");
+                note.state = Note.note_state.hit;
+                note.sibling_anticipator.GetComponent<SpriteRenderer>().color = Color.green;
+            }
+
+        }
+    }
+
 }

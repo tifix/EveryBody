@@ -50,7 +50,7 @@ public class NoteAnticipator : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) SpawnAnticipationNote(anticip_note, new Transform[] { A_pos, S_pos, K_pos, L_pos }[Random.Range(0, 4)],new Note(4));
+        if (Input.GetKeyDown(KeyCode.Space)) new Note().play(); //SpawnAnticipationNote(anticip_note, new Transform[] { A_pos, S_pos, K_pos, L_pos }[Random.Range(0, 4)],new Note(4));
         if (Input.GetKeyDown(KeyCode.LeftShift)) Time.timeScale = 0.25f;
         if (Input.GetKeyUp(KeyCode.LeftShift)) Time.timeScale = 1;
 

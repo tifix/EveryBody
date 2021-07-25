@@ -12,13 +12,18 @@ public class Note
 
     public GameObject sibling_anticipator = null;
 
-    public enum note_state{incoming,missed, hit, perfect }        
+    public enum note_state{incoming,active,missed, hit, perfect }        
 
     public Note(int position) 
     {
         start_time = position* SongReciever.instance.beat_interval;
         duration = SongReciever.instance.beat_interval*0.25f;
         input = 'a';
+    }
+    public Note() 
+    {
+        duration = SongReciever.instance.beat_interval * new float[] { 0.25f, 0.25f, 0.5f, 1f }[Random.Range(0, 4)];
+        input = new char[] { 'a', 's', 'k', 'l' }[Random.Range(0, 4)];
     }
 
     public void play() 
