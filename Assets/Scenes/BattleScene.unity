@@ -15880,6 +15880,8 @@ MonoBehaviour:
   score: 0
   streak: 0
   multiplier: 1
+  note_sustain_points: 0.1
+  note_hit_points: 10
 --- !u!114 &1224793374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16064,11 +16066,8 @@ MonoBehaviour:
       sibling_anticipator: {fileID: 0}
   BPM: 140
   beat_interval: 0
-  cycle_interval: 0
   current_notes: []
   song_start_time: 2
-  beat_start_time: 0
-  cur_note: 0
   cur_beat: 0
 --- !u!1 &1253700807
 GameObject:
@@ -21733,3 +21732,60 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1001 &2706097880326781523
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37.43445
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921210, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_Name
+      value: ScripteusTheEternal
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
