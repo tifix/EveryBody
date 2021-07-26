@@ -96,7 +96,10 @@ public class DialogueIntro : DialogueTyperBase
 
 
             case 17:
-                SceneSwitcher.LoadScene(2);
+                SceneSwitcher.instance.LoadSceneFancy(2);
+                break;
+            case 18:
+                Debug.LogWarning("overextending dialogue!");
                 break;
         }
     }
