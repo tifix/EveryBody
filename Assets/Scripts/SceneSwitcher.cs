@@ -32,13 +32,42 @@ public class SceneSwitcher : MonoBehaviour
         if (is_debugging && Input.GetKeyDown(KeyCode.LeftAlt)) anim.SetTrigger("TriggerCrossfade");
     }
 
-        
+
     public IEnumerator ScneFancyLoadeorum(int scene_number)
     {
-        if (!scene_transitioning) 
+        if (!scene_transitioning)
         {
             scene_transitioning = true;
-            instance.anim.SetTrigger("TriggerCrossfade");
+
+            switch (scene_number)
+            {
+                case (4):
+                    {
+                        instance.anim.SetTrigger("TriggerCircle");
+                        break;
+                    }
+                case (5):
+                    {
+                        instance.anim.SetTrigger("TriggerVictoria");
+                        break;
+                    }
+                case (6):
+                    {
+                        instance.anim.SetTrigger("TriggerEmo");
+                        break;
+                    }
+                case (7):
+                    {
+                        instance.anim.SetTrigger("TriggerDevil");
+                        break;
+                    }
+                default:
+                    {
+                        instance.anim.SetTrigger("TriggerCrossfade");
+                        break;
+                    }
+            }
+            
             yield return new WaitForSeconds(0.95f);
             instance.anim.speed = 0.1f;
             AsyncOperation async = SceneManager.LoadSceneAsync(scene_number, LoadSceneMode.Single);
@@ -71,7 +100,7 @@ public class SceneSwitcher : MonoBehaviour
     }
 
 
-    public static void LoadScene(int scene_number) 
+    public static void LoadScene(int scene_number)
     {
         SceneManager.LoadScene(scene_number);
     }
@@ -80,7 +109,7 @@ public class SceneSwitcher : MonoBehaviour
         StartCoroutine(ScneFancyLoadeorum(scene_number));
     }
 
-    public void LoadSceneDialogue(int scene_number,string dialogue) 
+    public void LoadSceneDialogue(int scene_number, string dialogue)
     {
         StartCoroutine(DialoguePreperer(scene_number, dialogue));
     }
