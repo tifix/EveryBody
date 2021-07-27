@@ -20,7 +20,6 @@ public class PlayerInput : MonoBehaviour
                 public Text score_text;
     [Header("Scoring system")]
     public string cur_input="";
-    public float score=0;
     public int streak=0;
     public int multiplier=1;
     public float note_sustain_points=0.1f;
@@ -99,9 +98,9 @@ public class PlayerInput : MonoBehaviour
                 if (streak > 20) multiplier = 4;
                 if (streak > 50) multiplier = 5;
 
-                score += note_hit_points*multiplier;
+                SceneSwitcher.score += note_hit_points*multiplier;
                 
-                score_text.text = Mathf.FloorToInt(score).ToString();
+                score_text.text = Mathf.FloorToInt(SceneSwitcher.score).ToString();
             }
 
         }
@@ -113,8 +112,8 @@ public class PlayerInput : MonoBehaviour
         {
             if (ArrayUtility.Contains(cur_input.ToCharArray(), note.input) && note.state == Note.note_state.hit)
             {
-                score += note_sustain_points * multiplier;
-                score_text.text = Mathf.FloorToInt(score).ToString();
+                SceneSwitcher.score += note_sustain_points * multiplier;
+                score_text.text = Mathf.FloorToInt(SceneSwitcher.score).ToString();
             }
         }
     }

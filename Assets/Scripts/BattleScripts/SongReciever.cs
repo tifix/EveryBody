@@ -5,7 +5,6 @@ using UnityEngine;
 public class SongReciever : MonoBehaviour
 {
     public static SongReciever instance;
-    public SpriteRenderer rhythm_sprite;
 
     //public List<Note> song = new List<Note>();
     [Tooltip("Track is made up of beats (4 by default)")]
@@ -22,7 +21,8 @@ public class SongReciever : MonoBehaviour
     private float beat_start_time;
     private int cur_note = 0;
     public int cur_beat = 0;
-   
+
+    public string DialogueOnCompletion;
 
     public IEnumerator NoteRetrieval()
     {
@@ -61,7 +61,7 @@ public class SongReciever : MonoBehaviour
         Debug.LogWarning("song finished");
 
         yield return new WaitForSeconds(final_cool_off);
-        //skeleton dialogue trigger goes here
+        SceneSwitcher.instance.LoadSceneDialogue(2, DialogueOnCompletion); //load fight outro dialogue
     }
 
     public IEnumerator ExtendedPlay(Note note)

@@ -96,7 +96,7 @@ public class DialogueIntro : DialogueTyperBase
 
 
             case 17:
-                SceneSwitcher.instance.LoadSceneFancy(2);
+                SceneSwitcher.instance.LoadSceneFancy(4);   //Load victor1 battlescene
                 break;
             case 18:
                 Debug.LogWarning("overextending dialogue!");

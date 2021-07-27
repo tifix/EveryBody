@@ -5,19 +5,31 @@ using UnityEngine.UI;
 
 public class DialogueTyperBase : MonoBehaviour
 {
+    public Color col_player= Color.white;
+    public Color col_devil = new Color(0.39f,0.12f,0f);
+    public Color col_emo =Color.black;
+    public Color col_victoria = new Color(0.78f, 0.63f, 0f);
+
     public GameObject textBox; //this is here in case the text box's visibility needs to be toggled on/off.
                                //Just drop the textbox image here in the inspector
 
     protected string dialog; //the dialogue
     public Text txt; //the text that displays the dialogue in UI
+    public Font font;
 
     public bool canSkip; //determines if we are in the middle of typing the text and thus can skip it
     protected bool runCoroutine; //we need this so that the coroutine doesn't try to run every frame
 
     protected int i = 0; //this is used to get dialogue onwards with switch case
 
-    public float typingWait = 0.3f; //how much time passes between the letters typed
-    public float base_typingWait = 0.3f; //how much time passes between the letters typed
+    public float typingWait = 0.05f; //how much time passes between the letters typed
+    public float base_typingWait = 0.05f; //how much time passes between the letters typed
+
+    //setting the font
+    public virtual void Awake()
+    {
+        if (txt != null && font != null) txt.font = font;
+    }
 
     public void Update()
     {
@@ -73,6 +85,7 @@ public class DialogueTyperBase : MonoBehaviour
 
     public IEnumerator Typer() //typing the text
     {
+        if(font!=null) txt.font = font;
         for (int i = 0; i < (dialog.Length + 1); i++)
         {
             canSkip = true;
@@ -81,5 +94,11 @@ public class DialogueTyperBase : MonoBehaviour
         }
         txt.text = dialog;
         canSkip = false;
+    }
+
+    public void Initialise() 
+    {
+        if (textBox == null) textBox = gameObject;
+        if (txt == null) txt = gameObject.GetComponent<Text>();
     }
 }

@@ -64,8 +64,15 @@
     <Compile Include="Assets\Scripts\BattleScripts\Note.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueTyperBase.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\MoveAndDie.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueEmoIntro.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueIntro.cs" />
-    <Compile Include="Assets\Scripts\Dialogue\DialogueSynth.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueVictorInter.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueVictorOutroWL.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueWinLoss.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueEmoOutroWL.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueDevilOutroWL.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueDevilIntro.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueOutro.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Skiddadle.txt" />

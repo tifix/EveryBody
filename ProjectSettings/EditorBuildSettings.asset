@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 1ff70056b90f54e49b4ac2684cb8be0b
@@ -15,6 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: fe8c8d09b6d0f624582b7dc0dd0bec07
   - enabled: 1
-    path: Assets/Scenes/BattleScene.unity
+    path: Assets/Scenes/Dialogue.unity
+    guid: 3188114d336d95245ac12299ba838a32
+  - enabled: 1
+    path: Assets/Scenes/Outro.unity
+    guid: 0ddd399d038552340b70d59fc9b9ff54
+  - enabled: 1
+    path: Assets/Scenes/BattleVictor.unity
     guid: 328fe9743212ace4c959e62bb8e413f6
+  - enabled: 1
+    path: Assets/Scenes/BattleVictor2.unity
+    guid: 4658f0dbfffa2f14092d03d8a27424ee
+  - enabled: 1
+    path: Assets/Scenes/BattleEMO.unity
+    guid: 4a8e6e998ced8a3429ef1a60d4c67e3f
+  - enabled: 1
+    path: Assets/Scenes/BattleDevil.unity
+    guid: 7665ece879fc22545a1cac0d70b8864e
   m_configObjects: {}
