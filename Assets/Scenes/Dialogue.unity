@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4528302, g: 0.3314648, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -181,7 +181,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: cd566125d7832064086063fb7f1d51ad, type: 3}
+    m_Font: {fileID: 12800000, guid: d8bf5c378acdfa947bec8db5d298ec52, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -384,6 +384,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 606715075, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.56
@@ -596,7 +600,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1714567859}
   - component: {fileID: 1714567858}
-  - component: {fileID: 1714567857}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -604,14 +607,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1714567857
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714567854}
-  m_Enabled: 1
 --- !u!20 &1714567858
 Camera:
   m_ObjectHideFlags: 0

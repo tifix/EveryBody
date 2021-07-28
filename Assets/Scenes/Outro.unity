@@ -269,7 +269,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1072173966}
   - component: {fileID: 1072173965}
-  - component: {fileID: 1072173964}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -277,14 +276,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1072173964
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072173963}
-  m_Enabled: 1
 --- !u!20 &1072173965
 Camera:
   m_ObjectHideFlags: 0
@@ -392,6 +383,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b803dcfc5d5796a489fdbbf2f76f1a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  col_player: {r: 1, g: 1, b: 1, a: 1}
+  col_devil: {r: 0.39, g: 0.12, b: 0, a: 1}
+  col_emo: {r: 0, g: 0, b: 0, a: 1}
+  col_victoria: {r: 0.78, g: 0.63, b: 0, a: 1}
   textBox: {fileID: 1227616543}
   txt: {fileID: 1227616546}
   font: {fileID: 12800000, guid: 5afd81bb7d4e30a47ae413e83214e0d0, type: 3}

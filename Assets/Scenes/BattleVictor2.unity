@@ -15780,7 +15780,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1224793372}
   - component: {fileID: 1224793371}
-  - component: {fileID: 1224793370}
   - component: {fileID: 1224793373}
   - component: {fileID: 1224793374}
   m_Layer: 0
@@ -15790,14 +15789,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1224793370
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224793369}
-  m_Enabled: 1
 --- !u!20 &1224793371
 Camera:
   m_ObjectHideFlags: 0
@@ -16064,10 +16055,11 @@ MonoBehaviour:
       sibling_anticipator: {fileID: 0}
   BPM: 140
   beat_interval: 0
+  track_audio: {fileID: 8300000, guid: 2909ef41f923e7e42b0c94f8554ba10d, type: 3}
   current_notes: []
   initial_warm_up: 5
   final_cool_off: 5
-  song_start_time: 2
+  song_start_time: 3
   cur_beat: 0
   DialogueOnCompletion: victorian_outro
 --- !u!1 &1253700807
@@ -22025,6 +22017,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 606715075, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.56

@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 606715075, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.56
@@ -16743,7 +16747,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1941354053}
   - component: {fileID: 1941354049}
-  - component: {fileID: 1941354052}
   - component: {fileID: 1941354051}
   - component: {fileID: 1941354050}
   m_Layer: 0
@@ -16927,10 +16930,11 @@ MonoBehaviour:
       sibling_anticipator: {fileID: 0}
   BPM: 140
   beat_interval: 0
+  track_audio: {fileID: 8300000, guid: e8957876138493e4e9d7649c78980d8c, type: 3}
   current_notes: []
   initial_warm_up: 5
   final_cool_off: 5
-  song_start_time: 2
+  song_start_time: 3
   cur_beat: 0
   DialogueOnCompletion: emo_outro
 --- !u!114 &1941354051
@@ -16959,14 +16963,6 @@ MonoBehaviour:
   multiplier: 1
   note_sustain_points: 0.1
   note_hit_points: 10
---- !u!81 &1941354052
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941354048}
-  m_Enabled: 1
 --- !u!4 &1941354053
 Transform:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class SongReciever : MonoBehaviour
     public List<Beat> track = new List<Beat>();
     public float BPM = 140;
     public float beat_interval;
+    public AudioClip track_audio;
 
     [HideInInspector] public List<Note> current_notes = new List<Note>();
     [Header("Track progression")]
@@ -27,6 +28,7 @@ public class SongReciever : MonoBehaviour
     public IEnumerator NoteRetrieval()
     {
         yield return new WaitForSeconds(initial_warm_up);
+        AudioHandler.PlayMusic(track_audio,1);
         song_start_time = Time.time;
         beat_start_time = song_start_time;
 

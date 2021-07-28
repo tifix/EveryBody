@@ -5313,7 +5313,6 @@ GameObject:
   m_Component:
   - component: {fileID: 379012925}
   - component: {fileID: 379012921}
-  - component: {fileID: 379012924}
   - component: {fileID: 379012923}
   - component: {fileID: 379012922}
   m_Layer: 0
@@ -5495,10 +5494,11 @@ MonoBehaviour:
       sibling_anticipator: {fileID: 0}
   BPM: 140
   beat_interval: 0
+  track_audio: {fileID: 8300000, guid: 75211285b20ec5241b79e1d02c124991, type: 3}
   current_notes: []
   initial_warm_up: 5
   final_cool_off: 5
-  song_start_time: 2
+  song_start_time: 3
   cur_beat: 0
   DialogueOnCompletion: devil_outro
 --- !u!114 &379012923
@@ -5527,14 +5527,6 @@ MonoBehaviour:
   multiplier: 1
   note_sustain_points: 0.1
   note_hit_points: 10
---- !u!81 &379012924
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379012920}
-  m_Enabled: 1
 --- !u!4 &379012925
 Transform:
   m_ObjectHideFlags: 0
@@ -10871,6 +10863,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 606715075, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.56
