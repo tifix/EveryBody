@@ -19,6 +19,7 @@ public class SceneSwitcher : MonoBehaviour
     public int highscore_victoria = 0;
     public int highscore_emo = 0;
     public int highscore_devil = 0;
+    public int highscore_final = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -84,11 +85,15 @@ public class SceneSwitcher : MonoBehaviour
         }
     }
 
-    public IEnumerator DialoguePreperer(int scene_number, string dialogue)
+    public IEnumerator DialoguePreperer(string dialogue)
     {
         if (!scene_transitioning)
         {
             scene_transitioning = true;
+
+            int scene_number = 2;
+            if(dialogue=="outro") scene_number = 3;
+
             instance.anim.SetTrigger("TriggerCrossfade");
             yield return new WaitForSeconds(0.95f);
             instance.anim.speed = 0.1f;
@@ -114,9 +119,9 @@ public class SceneSwitcher : MonoBehaviour
         StartCoroutine(ScneFancyLoadeorum(scene_number));
     }
 
-    public void LoadSceneDialogue(int scene_number, string dialogue)
+    public void LoadSceneDialogue(string dialogue)
     {
-        StartCoroutine(DialoguePreperer(scene_number, dialogue));
+        StartCoroutine(DialoguePreperer(dialogue));
     }
 
     private void BakeDialogue(string dialogue)
@@ -156,6 +161,9 @@ public class SceneSwitcher : MonoBehaviour
                 if(score> highscore_devil) highscore_devil = Mathf.FloorToInt(score);
                 cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueDevilOutroWL)) as DialogueWinLoss;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
                 cur_dialogue.Initialise();
+                break;
+            case "outro":
+                if (score > highscore_final) highscore_final = Mathf.FloorToInt(score);
                 break;
         }
     }

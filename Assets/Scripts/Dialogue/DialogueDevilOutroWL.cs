@@ -156,7 +156,7 @@ public class DialogueDevilOutroWL : DialogueWinLoss
 
 
                 case 21:
-                    SceneSwitcher.instance.LoadSceneFancy(3);   //Load the outro of the game;
+                    SceneSwitcher.instance.LoadSceneFancy(8);   //Load the final fight of the game;
                     break;
                 case 22:
                     Debug.LogWarning("overextending dialogue!");
