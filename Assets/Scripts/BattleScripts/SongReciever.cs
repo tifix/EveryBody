@@ -101,7 +101,7 @@ public class SongReciever : MonoBehaviour
 
     public void Start()
     {
-
+        current_notes = new List<Note>();
         StartCoroutine(NoteRetrieval());
     }
 
