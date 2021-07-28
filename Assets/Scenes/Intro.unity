@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.14117648, g: 0.13725491, b: 0.13725491, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -540,6 +540,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.08216549
       objectReference: {fileID: 0}
@@ -552,6 +556,10 @@ PrefabInstance:
       value: 37.43445
       objectReference: {fileID: 0}
     - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -562,14 +570,6 @@ PrefabInstance:
     - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -746,6 +746,8 @@ GameObject:
   - component: {fileID: 1694887615}
   - component: {fileID: 1694887614}
   - component: {fileID: 1694887613}
+  - component: {fileID: 1694887618}
+  - component: {fileID: 1694887617}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -792,6 +794,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1694887615
 Canvas:
   m_ObjectHideFlags: 0
@@ -834,6 +837,44 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1694887617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694887612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c294e32313d4b2e4d9e46ab7697d0825, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1694887618
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694887612}
+  m_CullTransparentMesh: 1
 --- !u!1 &1793908844
 GameObject:
   m_ObjectHideFlags: 0
