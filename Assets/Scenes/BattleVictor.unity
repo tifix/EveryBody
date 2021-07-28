@@ -15780,7 +15780,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1224793372}
   - component: {fileID: 1224793371}
-  - component: {fileID: 1224793370}
   - component: {fileID: 1224793373}
   - component: {fileID: 1224793374}
   m_Layer: 0
@@ -15790,14 +15789,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1224793370
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224793369}
-  m_Enabled: 1
 --- !u!20 &1224793371
 Camera:
   m_ObjectHideFlags: 0
@@ -15898,176 +15889,53 @@ MonoBehaviour:
     notes:
     - name: note
       start_time: 0
-      duration: 0.25
-      input: 97
+      duration: 0.375
+      input: 108
       state: 2
       sibling_anticipator: {fileID: 0}
     - name: note
-      start_time: 0.25
+      start_time: 0.375
+      duration: 0.125
+      input: 107
+      state: 2
+      sibling_anticipator: {fileID: 0}
+    - name: note
+      start_time: 0.5
       duration: 0.25
       input: 115
       state: 2
       sibling_anticipator: {fileID: 0}
     - name: note
       start_time: 0.5
-      duration: 0.25
-      input: 107
-      state: 2
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.75
-      duration: 0.25
-      input: 108
-      state: 2
-      sibling_anticipator: {fileID: 0}
-  - name: Beat
-    notes:
-    - name: note
-      start_time: 0
-      duration: 0.25
-      input: 115
-      state: 2
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.25
       duration: 0.5
       input: 97
       state: 2
       sibling_anticipator: {fileID: 0}
     - name: note
       start_time: 0.75
-      duration: 0.25
-      input: 107
-      state: 2
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.75
-      duration: 0.25
+      duration: 0.125
       input: 108
       state: 2
-      sibling_anticipator: {fileID: 0}
-  - name: Beat
-    notes:
-    - name: note
-      start_time: 0
-      duration: 0.5
-      input: 107
-      state: 2
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.25
-      duration: 0.5
-      input: 108
-      state: 1
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.5
-      duration: 0.125
-      input: 97
-      state: 1
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.625
-      duration: 0.125
-      input: 115
-      state: 0
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.75
-      duration: 0.125
-      input: 97
-      state: 0
       sibling_anticipator: {fileID: 0}
     - name: note
       start_time: 0.875
+      duration: 0.375
+      input: 107
+      state: 2
+      sibling_anticipator: {fileID: 0}
+    - name: note
+      start_time: 1.125
       duration: 0.125
       input: 115
-      state: 0
-      sibling_anticipator: {fileID: 0}
-  - name: Beat
-    notes:
-    - name: note
-      start_time: 0
-      duration: 0.75
-      input: 97
-      state: 0
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0
-      duration: 0.75
-      input: 115
-      state: 0
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.5
-      duration: 0.5
-      input: 107
-      state: 0
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.5
-      duration: 0.5
-      input: 108
-      state: 0
-      sibling_anticipator: {fileID: 0}
-  - name: Beat
-    notes:
-    - name: note
-      start_time: 0
-      duration: 0.75
-      input: 97
-      state: 0
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0
-      duration: 0.75
-      input: 115
-      state: 0
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.5
-      duration: 0.5
-      input: 107
-      state: 0
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.5
-      duration: 0.5
-      input: 108
-      state: 0
-      sibling_anticipator: {fileID: 0}
-  - name: Beat
-    notes:
-    - name: note
-      start_time: 0
-      duration: 0.75
-      input: 97
-      state: 0
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0
-      duration: 0.75
-      input: 115
-      state: 0
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.5
-      duration: 0.5
-      input: 107
-      state: 0
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.5
-      duration: 0.5
-      input: 108
-      state: 0
+      state: 2
       sibling_anticipator: {fileID: 0}
   BPM: 140
   beat_interval: 0
+  track_audio: {fileID: 8300000, guid: 2909ef41f923e7e42b0c94f8554ba10d, type: 3}
   current_notes: []
   initial_warm_up: 5
   final_cool_off: 5
-  song_start_time: 2
+  song_start_time: 3
   cur_beat: 0
   DialogueOnCompletion: victorian_inter
 --- !u!1 &1253700807

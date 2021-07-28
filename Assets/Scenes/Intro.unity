@@ -292,10 +292,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489f24ae62a76f14faec878dcf54c14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_color: {r: 1, g: 1, b: 1, a: 1}
-  devil_color: {r: 0.39, g: 0.12, b: 0, a: 1}
-  emo_color: {r: 0, g: 0, b: 0, a: 1}
-  victoria_color: {r: 0.7843138, g: 0.63529414, b: 0, a: 1}
+  col_player: {r: 1, g: 1, b: 1, a: 1}
+  col_devil: {r: 0.39, g: 0.12, b: 0, a: 1}
+  col_emo: {r: 0, g: 0, b: 0, a: 1}
+  col_victoria: {r: 0.78, g: 0.63, b: 0, a: 1}
   textBox: {fileID: 103532083}
   txt: {fileID: 103532085}
   font: {fileID: 0}
@@ -313,7 +313,6 @@ GameObject:
   m_Component:
   - component: {fileID: 197946370}
   - component: {fileID: 197946369}
-  - component: {fileID: 197946368}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -321,14 +320,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &197946368
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197946367}
-  m_Enabled: 1
 --- !u!20 &197946369
 Camera:
   m_ObjectHideFlags: 0

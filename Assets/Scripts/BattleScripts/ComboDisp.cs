@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ComboDisp : MonoBehaviour
+public class ComboDisp : PulsingMovement
 {
-
-    public float scale = 0.1f;
-    public float frequency=1;
-    public Color color;
-
-    public void Update()
+    public override void Update()
     {
         if (PlayerInput.instance.multiplier <2) 
         {
@@ -29,11 +24,9 @@ public class ComboDisp : MonoBehaviour
         }
 
 
+        base.Update();
 
         //applying display effects
-        RectTransform rt = GetComponent<RectTransform>();
-        rt.localScale = (Mathf.Abs( Mathf.Sin(Time.time*frequency)) * scale  + 1) * Vector3.one;
-        GetComponent<Text>().color = color;
         GetComponent<Text>().text = "combo "+ PlayerInput.instance.streak.ToString();
     }
 
