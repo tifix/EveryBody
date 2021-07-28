@@ -10,10 +10,12 @@ public class Menu : MonoBehaviour
     public Button victoria_button;
     public Button emo_button;
     public Button devil_button;
+    public Button final_button;
 
     public Text vic_score_disp;
     public Text emo_score_disp;
     public Text dev_score_disp;
+    public Text fin_score_disp;
 
     public void ToggleCredits() 
     {
@@ -41,6 +43,11 @@ public class Menu : MonoBehaviour
     {
         SceneSwitcher.instance.LoadSceneFancy(7);
     }
+    public void SelectFinale()
+    {
+        SceneSwitcher.instance.LoadSceneFancy(8);
+    }
+
     public void Start()
     {
         //Disable level selects if the player hasn't beaten that character yet.
@@ -54,6 +61,9 @@ public class Menu : MonoBehaviour
 
             if (SceneSwitcher.instance.highscore_devil < 1) { devil_button.interactable = false; dev_score_disp.text = "Undefeated"; }
             else { devil_button.interactable = true; dev_score_disp.text = "HS: " + SceneSwitcher.instance.highscore_devil;}
+
+            if (SceneSwitcher.instance.highscore_finale < 1) { final_button.interactable = false; fin_score_disp.text = "Undefeated"; }
+            else { final_button.interactable = true; fin_score_disp.text = "HS: " + SceneSwitcher.instance.highscore_finale; }
         }
 
     }

@@ -116,7 +116,7 @@ public class DialogueOutro : DialogueTyperBase
                 SceneSwitcher.instance.LoadSceneFancy(0);   //Load the menu scene
                 break;
             case 21:
-                Debug.LogWarning("overextending dialogue!");
+                //Debug.LogWarning("overextending dialogue!");
                 break;
         }
     }

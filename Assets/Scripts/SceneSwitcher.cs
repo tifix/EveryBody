@@ -19,6 +19,7 @@ public class SceneSwitcher : MonoBehaviour
     public int highscore_victoria = 0;
     public int highscore_emo = 0;
     public int highscore_devil = 0;
+    public int highscore_finale = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -84,8 +85,11 @@ public class SceneSwitcher : MonoBehaviour
         }
     }
 
-    public IEnumerator DialoguePreperer(int scene_number, string dialogue)
+    public IEnumerator DialoguePreperer(string dialogue)
     {
+        int scene_number = 2;
+        if (dialogue == "outro") scene_number = 3;
+
         if (!scene_transitioning)
         {
             scene_transitioning = true;
@@ -95,7 +99,7 @@ public class SceneSwitcher : MonoBehaviour
             AsyncOperation async = SceneManager.LoadSceneAsync(scene_number, LoadSceneMode.Single);
             while (!async.isDone) yield return null;
             instance.anim.speed = 1f;
-
+            //if (dialogue != "outro")
             BakeDialogue(dialogue);
 
             instance.anim.SetTrigger("SceneReady");
@@ -114,17 +118,22 @@ public class SceneSwitcher : MonoBehaviour
         StartCoroutine(ScneFancyLoadeorum(scene_number));
     }
 
-    public void LoadSceneDialogue(int scene_number, string dialogue)
+    public void LoadSceneDialogue(string dialogue)
     {
-        StartCoroutine(DialoguePreperer(scene_number, dialogue));
+        StartCoroutine(DialoguePreperer(dialogue));
     }
 
     private void BakeDialogue(string dialogue)
     {
-        bool did_pass = false;
-        if (score > 250) did_pass = true;
 
-        DialogueDisplayer = GameObject.Find("TextMain").GetComponent<Text>();    //Highly unstable, ensure the text displayer has the proper name
+        try { DialogueDisplayer = GameObject.Find("TextMain").GetComponent<Text>(); }    //Highly unstable, ensure the text displayer has the proper name }
+        catch 
+        { /*
+            Debug.Log("now baking outro dialogue");
+            if (score > highscore_finale) highscore_finale = Mathf.FloorToInt(score); 
+            return; 
+        */}
+            
         switch (dialogue)
         {
             case "victorian_inter":
@@ -156,6 +165,9 @@ public class SceneSwitcher : MonoBehaviour
                 if(score> highscore_devil) highscore_devil = Mathf.FloorToInt(score);
                 cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueDevilOutroWL)) as DialogueWinLoss;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
                 cur_dialogue.Initialise();
+                break;
+            case "outro":
+                if (score > highscore_finale) highscore_finale = Mathf.FloorToInt(score);
                 break;
         }
     }
