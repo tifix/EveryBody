@@ -32,7 +32,7 @@ public class DialogueVictorOutroWL : DialogueWinLoss
 
 
                 case 3:
-                    SceneSwitcher.instance.LoadSceneDialogue(2, "emo_intro");   //Load emo intro
+                    SceneSwitcher.instance.LoadSceneDialogue("emo_intro");   //Load emo intro
                     break;
                 case 4:
                     Debug.LogWarning("overextending dialogue!");

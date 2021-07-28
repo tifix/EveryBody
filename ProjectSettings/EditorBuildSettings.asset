@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleDevil.unity
     guid: 7665ece879fc22545a1cac0d70b8864e
+  - enabled: 1
+    path: Assets/Scenes/BattleFin.unity
+    guid: 590b38617ddfc2e4f8aa16d6a05a846c
   m_configObjects: {}

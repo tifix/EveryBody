@@ -31,7 +31,7 @@ public class DialogueEmoOutroWL : DialogueWinLoss
 
                 case 4:
                     font = Resources.Load<Font>("Fonts/Love Taking");
-                    SceneSwitcher.instance.LoadSceneDialogue(2, "devil_intro");   //Load devil intro
+                    SceneSwitcher.instance.LoadSceneDialogue("devil_intro");   //Load devil intro
                     break;
                 case 5:
                     Debug.LogWarning("overextending dialogue!");

@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637630949635083773
-    m_Hash: 3840035220
+      ticks: 637630993316518247
+    m_Hash: 201770724
   m_LockFileStatus:
     m_FilePath: C:/Users/Mikolaj/Desktop/EveryBody/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637630950073123589
-    m_Hash: 4260339611
+      ticks: 637630993316528210
+    m_Hash: 2649206615
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -103,6 +103,7 @@ m_ResolvedPackages:
     - 6.0.3
     - 6.0.4
     - 7.0.0-pre.2
+    - 7.0.0-pre.3
     compatible:
     - 6.0.4
     verified: 6.0.4
@@ -298,6 +299,7 @@ m_ResolvedPackages:
     - 5.0.4
     - 6.0.0-pre.2
     - 6.0.0-pre.3
+    - 6.0.0-pre.4
     compatible:
     - 5.0.4
     verified: 5.0.4

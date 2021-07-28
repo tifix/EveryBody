@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class HighScores : MonoBehaviour
 {
@@ -30,7 +31,8 @@ public class HighScores : MonoBehaviour
 
     IEnumerator UploadNewScore(string username, int score) 
     {
-        WWW www = new WWW(web_url + private_code + "/add/" + WWW.EscapeURL(username) + "/" + score);
+        UnityWebRequest www = new UnityWebRequest(web_url + private_code + "/add/" + UnityWebRequest.EscapeURL(username) + "/" + score);
+        //WWW www = new WWW(web_url + private_code + "/add/" + WWW.EscapeURL(username) + "/" + score);
         yield return www;
 
         if (string.IsNullOrEmpty(www.error)) Debug.LogWarning("upload succesfull"); 
@@ -39,14 +41,15 @@ public class HighScores : MonoBehaviour
 
     IEnumerator DownloadScores()
     {
-        WWW www = new WWW(web_url + public_code + "/pipe/");
+        UnityWebRequest www = new UnityWebRequest(web_url + public_code + "/pipe/");
         yield return www;
 
         if (string.IsNullOrEmpty(www.error))
         {
             Debug.LogWarning("download succesfull");
-            FormatHighscore(www.text);
-            
+            //FormatHighscore(www.text);
+            //UnityWebRequest.Get(www);
+            FormatHighscore(www.downloadHandler.text);
         }
         else Debug.LogWarning("upload error: " + www.error);
     }
@@ -62,8 +65,9 @@ public class HighScores : MonoBehaviour
             int score= int.Parse( entries[i].Split('|')[1]);
 
             high_scores[i] = new Entry(name, score);
+            Debug.Log(high_scores[i]);
         }
-
+        
     }
 
 
