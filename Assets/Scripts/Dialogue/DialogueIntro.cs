@@ -17,7 +17,7 @@ public class DialogueIntro : DialogueTyperBase
                 break;
             case 1:
                 typingWait = base_typingWait * 1.2f;
-                dialog = "(Jack): Where am I?";
+                dialog = "Where am I?";
                 Coroutine();
                 break;
             case 2:

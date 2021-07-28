@@ -12,7 +12,7 @@ public class DialogueVictorInter : DialogueTyperBase
                 txt.color = col_player;
                 font = Resources.Load<Font>("Fonts/Love Taking");
                 typingWait = base_typingWait * 2f;
-                dialog = "(Jack): Hi..?";
+                dialog = "Hi..?";
                 Coroutine();
                 break;
             case 1:

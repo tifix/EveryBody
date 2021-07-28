@@ -55,8 +55,11 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\SongReciever.cs" />
+    <Compile Include="Assets\Scripts\BattleScripts\PulsingMovement.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueWinLoss.cs" />
+    <Compile Include="Assets\Scripts\AudioHandler.cs" />
     <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\Beat.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\NoteAnticipator.cs" />
@@ -73,9 +76,7 @@
     <Compile Include="Assets\Scripts\Dialogue\DialogueEmoIntro.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueIntro.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueVictorInter.cs" />
-    <Compile Include="Assets\Scripts\BattleScripts\PulsingMovement.cs" />
-    <Compile Include="Assets\Scripts\Menu.cs" />
-    <Compile Include="Assets\Scripts\AudioHandler.cs" />
+    <Compile Include="Assets\Scripts\AnyKeyKill.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Skiddadle.txt" />
