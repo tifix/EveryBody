@@ -4909,7 +4909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {x: -0.22, y: 0, z: 0}
-  lifespan: 120
+  lifespan: 3.25
   sibling_note:
     name: note
     start_time: 0
