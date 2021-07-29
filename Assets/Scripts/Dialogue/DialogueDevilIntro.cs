@@ -26,7 +26,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 txt.color = col_emo;
                 typingWait = base_typingWait * 1.3f;
                 font = Resources.Load<Font>("Fonts/old evils");
-                dialog = "I once…";
+                dialog = "I once. . . ";
                 Coroutine();
                 break;
             case 3:
@@ -61,14 +61,14 @@ public class DialogueDevilIntro : DialogueTyperBase
                 txt.color = col_emo;
                 typingWait = base_typingWait * 1.3f;
                 font = Resources.Load<Font>("Fonts/old evils");
-                dialog = "From the sidelines… ";
+                dialog = "From the sidelines. . . ";
                 Coroutine();
                 break;
             case 8:
                 txt.color = col_emo;
                 typingWait = base_typingWait * 1.5f;
                 font = Resources.Load<Font>("Fonts/old evils");
-                dialog = "More lovely and more temperate than the summer’s day…";
+                dialog = "More lovely and more temperate than the summer’s day. . .";
                 Coroutine();
                 break;
             case 9:
@@ -110,26 +110,26 @@ public class DialogueDevilIntro : DialogueTyperBase
                 txt.color = col_emo;
                 typingWait = base_typingWait * 3f;
                 font = Resources.Load<Font>("Fonts/old evils");
-                dialog = "Your…";
+                dialog = "Your. . . ";
                 Coroutine();
                 break;
             case 15:
                 txt.color = col_victoria;
                 typingWait = base_typingWait * 2.5f;
                 font = Resources.Load<Font>("Fonts/Olondon_");
-                dialog = "Thy majesty… I am sorry…";
+                dialog = "Thy majesty. . . I am sorry. . .";
                 Coroutine();
                 break;
             case 16:
                 txt.color = col_emo;
                 typingWait = base_typingWait * 1f;
                 font = Resources.Load<Font>("Fonts/old evils");
-                dialog = "I have written you a poem… ";
+                dialog = "I have written you a poem. . . ";
                 Coroutine();
                 break;
             case 17:
                 typingWait = base_typingWait * 0.8f;
-                dialog = "or maybe it is more about you than to you…";
+                dialog = "or maybe it is more about you than to you. . .";
                 Coroutine();
                 break;
             case 18:
@@ -178,19 +178,19 @@ public class DialogueDevilIntro : DialogueTyperBase
             case 24:
                 font = Resources.Load<Font>("Fonts/AngerStyles");
                 typingWait = base_typingWait * 1.1f;
-                dialog = "Hell has been overcrowded for centuries now but we’ve made it work…";
+                dialog = "Hell has been overcrowded for centuries now but we’ve made it work. . .";
                 Coroutine();
                 break;
             case 25:
                 font = Resources.Load<Font>("Fonts/WrathStyles");
                 typingWait = base_typingWait * 0.84f;
-                dialog = "NO I do NOT want to ask for help from “upstairs”! It’s bad enough that they keep sending a card every Christmas, so humiliating…";
+                dialog = "NO I do NOT want to ask for help from “upstairs”! It’s bad enough that they keep sending a card every Christmas, so humiliating. . .";
                 Coroutine();
                 break;
             case 26:
                 font = Resources.Load<Font>("Fonts/AngerStyles");
                 typingWait = base_typingWait * 0.75f;
-                dialog = "Some baboons have found their way to my yard, anyway, so maybe we’ll cut a bit of my yard… Seems to be space, I didn’t remember..";
+                dialog = "Some baboons have found their way to my yard, anyway, so maybe we’ll cut a bit of my yard. . . Seems to be space, I didn’t remember..";
                 Coroutine();
                 break;
             case 27:

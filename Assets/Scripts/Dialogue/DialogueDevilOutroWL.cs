@@ -12,7 +12,7 @@ public class DialogueDevilOutroWL : DialogueWinLoss
                     txt.color = col_devil;
                     font = Resources.Load<Font>("Fonts/AngerStyles");
                     typingWait = base_typingWait;
-                    dialog = "Considering this is hell, that was the most torture I’ve endured in a millenia…";
+                    dialog = "Considering this is hell, that was the most torture I’ve endured in a millenia. . .";
                     Coroutine();
                     break;
                 case 1:

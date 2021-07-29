@@ -5491,12 +5491,6 @@ MonoBehaviour:
     - name: note
       start_time: 0.625
       duration: 0.125
-      input: 108
-      state: 3
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.625
-      duration: 0.125
       input: 107
       state: 3
       sibling_anticipator: {fileID: 0}
@@ -5548,13 +5542,7 @@ MonoBehaviour:
       sibling_anticipator: {fileID: 0}
     - name: note
       start_time: 0.25
-      duration: 0.25
-      input: 108
-      state: 3
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.5
-      duration: 0.125
+      duration: 0.375
       input: 108
       state: 3
       sibling_anticipator: {fileID: 0}
@@ -5562,12 +5550,6 @@ MonoBehaviour:
       start_time: 0.625
       duration: 0.25
       input: 107
-      state: 3
-      sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.625
-      duration: 0.25
-      input: 115
       state: 3
       sibling_anticipator: {fileID: 0}
     - name: note
@@ -5915,7 +5897,7 @@ MonoBehaviour:
       state: 2
       sibling_anticipator: {fileID: 0}
     - name: note
-      start_time: 0.25
+      start_time: 0.375
       duration: 0.125
       input: 97
       state: 2
@@ -5963,7 +5945,7 @@ MonoBehaviour:
     - name: note
       start_time: 0.375
       duration: 0.5
-      input: 115
+      input: 107
       state: 2
       sibling_anticipator: {fileID: 0}
   BPM: 120

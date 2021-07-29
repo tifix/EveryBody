@@ -66,7 +66,7 @@ public class DialogueIntro : DialogueTyperBase
                 break;
             case 11:
                 typingWait = base_typingWait * 1.25f;
-                dialog = "It will be TO DIE FOR. (heh)";
+                dialog = "It will be TO DIE FOR.               (heh)";
                 Coroutine();
                 break;
             case 12:

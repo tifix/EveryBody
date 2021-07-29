@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class DialogueTyperBase : MonoBehaviour
 {
     public Color col_player= Color.white;
-    public Color col_devil = new Color(0.39f,0.12f,0f);
-    public Color col_emo =Color.black;
-    public Color col_victoria = new Color(0.45f, 0.33f, 0f);
+    public Color col_devil = new Color(0.50f,0.28f,0.85f);
+    public Color col_emo = new Color(0.48f, 0.48f, 0.48f); //Color.black;
+    public Color col_victoria = new Color(0.88f,0.66f,0f);
 
     public GameObject textBox; //this is here in case the text box's visibility needs to be toggled on/off.
                                //Just drop the textbox image here in the inspector

@@ -4681,18 +4681,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 905075742}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: FetchHighscores
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 905075742}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: ToggleHighScores
         m_Mode: 1
         m_Arguments:
@@ -4825,18 +4813,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 606715073, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 606715075, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706097879469798951, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2706097879652921208, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4883,23 +4859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2706097879652921209, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: is_debugging
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706097879652921209, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
-      propertyPath: highscore_emo
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706097879652921209, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
-      propertyPath: highscore_devil
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706097879652921209, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
-      propertyPath: highscore_final
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706097879652921209, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
-      propertyPath: highscore_victoria
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2706097879652921210, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: m_Name

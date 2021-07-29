@@ -5491,13 +5491,13 @@ MonoBehaviour:
     - name: note
       start_time: 0.625
       duration: 0.125
-      input: 108
+      input: 97
       state: 3
       sibling_anticipator: {fileID: 0}
     - name: note
       start_time: 0.625
       duration: 0.125
-      input: 107
+      input: 115
       state: 3
       sibling_anticipator: {fileID: 0}
     - name: note
@@ -5561,7 +5561,7 @@ MonoBehaviour:
     - name: note
       start_time: 0.625
       duration: 0.25
-      input: 107
+      input: 97
       state: 3
       sibling_anticipator: {fileID: 0}
     - name: note
@@ -5643,7 +5643,13 @@ MonoBehaviour:
     - name: note
       start_time: 0.5
       duration: 0.25
-      input: 108
+      input: 97
+      state: 3
+      sibling_anticipator: {fileID: 0}
+    - name: note
+      start_time: 0.5
+      duration: 0.25
+      input: 115
       state: 3
       sibling_anticipator: {fileID: 0}
     - name: note
@@ -5681,6 +5687,12 @@ MonoBehaviour:
       state: 3
       sibling_anticipator: {fileID: 0}
     - name: note
+      start_time: 0
+      duration: 0.5
+      input: 115
+      state: 3
+      sibling_anticipator: {fileID: 0}
+    - name: note
       start_time: 0.625
       duration: 0.5
       input: 97
@@ -5690,6 +5702,12 @@ MonoBehaviour:
       start_time: 0.625
       duration: 0.5
       input: 115
+      state: 3
+      sibling_anticipator: {fileID: 0}
+    - name: note
+      start_time: 0.625
+      duration: 0.5
+      input: 107
       state: 3
       sibling_anticipator: {fileID: 0}
   - name: Beat
@@ -5829,9 +5847,21 @@ MonoBehaviour:
       state: 2
       sibling_anticipator: {fileID: 0}
     - name: note
+      start_time: 0.125
+      duration: 0.125
+      input: 115
+      state: 2
+      sibling_anticipator: {fileID: 0}
+    - name: note
       start_time: 0.375
       duration: 0.25
       input: 115
+      state: 2
+      sibling_anticipator: {fileID: 0}
+    - name: note
+      start_time: 0.375
+      duration: 0.25
+      input: 107
       state: 2
       sibling_anticipator: {fileID: 0}
     - name: note
@@ -5841,9 +5871,21 @@ MonoBehaviour:
       state: 2
       sibling_anticipator: {fileID: 0}
     - name: note
+      start_time: 0.625
+      duration: 0.125
+      input: 115
+      state: 2
+      sibling_anticipator: {fileID: 0}
+    - name: note
       start_time: 0.75
       duration: 0.25
       input: 115
+      state: 2
+      sibling_anticipator: {fileID: 0}
+    - name: note
+      start_time: 0.75
+      duration: 0.25
+      input: 107
       state: 2
       sibling_anticipator: {fileID: 0}
   - name: Beat
@@ -5855,9 +5897,21 @@ MonoBehaviour:
       state: 2
       sibling_anticipator: {fileID: 0}
     - name: note
+      start_time: 0
+      duration: 0.25
+      input: 107
+      state: 2
+      sibling_anticipator: {fileID: 0}
+    - name: note
       start_time: 0.25
       duration: 0.5
       input: 107
+      state: 2
+      sibling_anticipator: {fileID: 0}
+    - name: note
+      start_time: 0.25
+      duration: 0.5
+      input: 115
       state: 2
       sibling_anticipator: {fileID: 0}
   - name: Beat
@@ -5915,7 +5969,7 @@ MonoBehaviour:
       state: 2
       sibling_anticipator: {fileID: 0}
     - name: note
-      start_time: 0.25
+      start_time: 0.375
       duration: 0.125
       input: 97
       state: 2
@@ -5963,29 +6017,47 @@ MonoBehaviour:
     - name: note
       start_time: 0.375
       duration: 0.5
-      input: 115
+      input: 107
       state: 2
       sibling_anticipator: {fileID: 0}
   - name: Beat
     notes:
+    - name: note
+      start_time: 0.125
+      duration: 0.25
+      input: 115
+      state: 2
+      sibling_anticipator: {fileID: 0}
     - name: note
       start_time: 0.25
       duration: 0.25
       input: 97
       state: 2
       sibling_anticipator: {fileID: 0}
-    - name: note
-      start_time: 0.25
-      duration: 0.25
-      input: 115
-      state: 2
-      sibling_anticipator: {fileID: 0}
   - name: Beat
     notes:
     - name: note
-      start_time: 0.25
-      duration: 0.25
+      start_time: 0.375
+      duration: 0.125
+      input: 97
+      state: 2
+      sibling_anticipator: {fileID: 0}
+    - name: note
+      start_time: 0.375
+      duration: 0.125
       input: 115
+      state: 2
+      sibling_anticipator: {fileID: 0}
+    - name: note
+      start_time: 0.375
+      duration: 0.125
+      input: 107
+      state: 2
+      sibling_anticipator: {fileID: 0}
+    - name: note
+      start_time: 0.375
+      duration: 0.125
+      input: 108
       state: 2
       sibling_anticipator: {fileID: 0}
   BPM: 120
