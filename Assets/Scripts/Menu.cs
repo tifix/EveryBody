@@ -5,25 +5,52 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
+    public static Menu instance;
+
     public GameObject cretits_panel;
     public GameObject levelselect_panel;
+    public GameObject hs_panel;
+    [Space]
     public Button victoria_button;
     public Button emo_button;
     public Button devil_button;
     public Button final_button;
-
+    [Space]
     public Text vic_score_disp;
     public Text emo_score_disp;
     public Text dev_score_disp;
     public Text fin_score_disp;
+    [Space]
+    public Text board_vic;
+    public Text board_emo;
+    public Text board_dev;
+    public Text board_fin;
+    [Space]
+    public InputField nickname_reciever;
+
+    public void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(this);
+    }
 
     public void ToggleCredits() 
     {
         cretits_panel.SetActive(!cretits_panel.activeInHierarchy);
+        if (levelselect_panel.activeInHierarchy) levelselect_panel.SetActive(false);
+        if (hs_panel.activeInHierarchy) hs_panel.SetActive(false);
     }
     public void ToggleLevelSelect()
     {
         levelselect_panel.SetActive(!levelselect_panel.activeInHierarchy);
+        if (cretits_panel.activeInHierarchy) cretits_panel.SetActive(false);
+        if (hs_panel.activeInHierarchy) hs_panel.SetActive(false);
+    }
+    public void ToggleHighScores()
+    {
+        hs_panel.SetActive(!hs_panel.activeInHierarchy);
+        if (levelselect_panel.activeInHierarchy) levelselect_panel.SetActive(false);
+        if (cretits_panel.activeInHierarchy) cretits_panel.SetActive(false);
     }
 
     public void StartTheGame() 
@@ -68,4 +95,21 @@ public class Menu : MonoBehaviour
 
     }
 
+    
+    public void FetchHighscores() 
+    {
+        SceneSwitcher.instance.gameObject.GetComponent<HighScores>().UpdateHSDisplay();
+    }
+
+    public void PointlessButton()
+    {
+        SceneSwitcher.instance.gameObject.GetComponent<HighScores>().PointlessButton();
+    }
+
+    public void RecieveLeaderboardSubmission()
+    {
+        string nickname = nickname_reciever.textComponent.text;
+        Debug.Log(nickname);
+        SceneSwitcher.instance.gameObject.GetComponent<HighScores>().SendPlayerDataToServer(nickname);
+    }
 }
