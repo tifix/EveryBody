@@ -3,7 +3,12 @@ guid: 510b8a6a66f9e2f4f918c6da4e07deb7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - textBox: {instanceID: 0}
+  - txt: {instanceID: 0}
+  - font: {instanceID: 0}
+  - e_sprite: {fileID: 21300000, guid: 795dc14c6fc07054f8e87367203b9b83, type: 3}
+  - angry_sprite: {fileID: 21300000, guid: 44e6a2093643b9e41890f518c57dbc4c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

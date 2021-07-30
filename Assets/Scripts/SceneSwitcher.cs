@@ -7,19 +7,23 @@ using UnityEngine.SceneManagement;
 public class SceneSwitcher : MonoBehaviour
 {
     public static SceneSwitcher instance;
-    public bool is_debugging = false;
-    public Animator anim;
-    public bool scene_transitioning = false;
 
+    [Header("game parameters")]
+    public bool is_debugging = false;
+    public bool hardmode = false;
+    [Space]
+    public Animator anim;
+    [HideInInspector] public bool scene_transitioning = false;
     public static float score = 0;
-    public DialogueTyperBase cur_dialogue;
-    public Text DialogueDisplayer;
+    [HideInInspector] public DialogueTyperBase cur_dialogue;
+    [HideInInspector] public Text DialogueDisplayer;
 
     [Header("scores")]
     public int highscore_victoria = 0;
     public int highscore_emo = 0;
     public int highscore_devil = 0;
     public int highscore_final = 0;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -133,33 +137,35 @@ public class SceneSwitcher : MonoBehaviour
         switch (dialogue)
         {
             case "victorian_inter":
-                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueVictorInter)) as DialogueTyperBase;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
+                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueVictorInter)) as DialogueVictorInter;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
+                cur_dialogue.Awake();
                 cur_dialogue.Initialise();
                 score = 0;
                 break;
             case "victorian_outro":
                 if (score > highscore_victoria) highscore_victoria = Mathf.FloorToInt(score);
-                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueVictorOutroWL)) as DialogueTyperBase;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
+                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueVictorOutroWL)) as DialogueVictorOutroWL;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
+                cur_dialogue.Awake();
                 cur_dialogue.Initialise();
                 break;
             case "emo_intro":
-                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueEmoIntro)) as DialogueTyperBase;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
+                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueEmoIntro)) as DialogueEmoIntro;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
                 cur_dialogue.Initialise();
                 score = 0;
                 break;
             case "emo_outro":
                 if (score > highscore_emo) highscore_emo = Mathf.FloorToInt(score);
-                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueEmoOutroWL)) as DialogueWinLoss;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
+                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueEmoOutroWL)) as DialogueEmoOutroWL;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
                 cur_dialogue.Initialise();
                 break;
             case "devil_intro":
-                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueDevilIntro)) as DialogueTyperBase;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
+                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueDevilIntro)) as DialogueDevilIntro;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
                 cur_dialogue.Initialise();
                 score = 0;
                 break;
             case "devil_outro":
                 if(score> highscore_devil) highscore_devil = Mathf.FloorToInt(score);
-                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueDevilOutroWL)) as DialogueWinLoss;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
+                cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueDevilOutroWL)) as DialogueDevilOutroWL;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
                 cur_dialogue.Initialise();
                 score = 0;
                 break;

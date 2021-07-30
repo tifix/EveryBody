@@ -3,7 +3,11 @@ guid: 080bb3396fadd40f19684a0fa782e4eb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - textBox: {instanceID: 0}
+  - txt: {instanceID: 0}
+  - font: {instanceID: 0}
+  - background_music: {fileID: 8300000, guid: a743d3501865df34085457de938ff3fc, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueEmoIntro : DialogueTyperBase
 {
@@ -195,6 +196,16 @@ public class DialogueEmoIntro : DialogueTyperBase
             case 30:
                 Debug.LogWarning("overextending dialogue!");
                 break;
+        }
+    }
+    public override void Initialise()
+    {
+        base.Initialise();
+        e_sprite = Resources.Load<Sprite>("_oikea_victorian flut_happy") as Sprite;
+
+        if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
+        {
+            SR.sprite = e_sprite;
         }
     }
 }

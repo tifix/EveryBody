@@ -27,7 +27,9 @@ public class Menu : MonoBehaviour
     public Text board_fin;
     [Space]
     public InputField nickname_reciever;
-
+    public AudioClip button_press_sfx;
+    public AudioClip ambience_music;
+    
     public void Awake()
     {
         if (instance == null) instance = this;
@@ -36,44 +38,56 @@ public class Menu : MonoBehaviour
 
     public void ToggleCredits() 
     {
+        AudioHandler.PlaySFX(button_press_sfx);
         cretits_panel.SetActive(!cretits_panel.activeInHierarchy);
         if (levelselect_panel.activeInHierarchy) levelselect_panel.SetActive(false);
         if (hs_panel.activeInHierarchy) hs_panel.SetActive(false);
     }
     public void ToggleLevelSelect()
     {
+        AudioHandler.PlaySFX(button_press_sfx);
         levelselect_panel.SetActive(!levelselect_panel.activeInHierarchy);
         if (cretits_panel.activeInHierarchy) cretits_panel.SetActive(false);
         if (hs_panel.activeInHierarchy) hs_panel.SetActive(false);
     }
     public void ToggleHighScores()
     {
-        if(!hs_panel.activeInHierarchy) SceneSwitcher.instance.gameObject.GetComponent<HighScores>().UpdateHSDisplay(); 
+        AudioHandler.PlaySFX(button_press_sfx);
+        if (!hs_panel.activeInHierarchy) SceneSwitcher.instance.gameObject.GetComponent<HighScores>().UpdateHSDisplay(); 
 
         hs_panel.SetActive(!hs_panel.activeInHierarchy);
         if (levelselect_panel.activeInHierarchy) levelselect_panel.SetActive(false);
         if (cretits_panel.activeInHierarchy) cretits_panel.SetActive(false);
     }
 
-    public void StartTheGame() 
+    public void StartTheGame()
     {
+        AudioHandler.PlaySFX(button_press_sfx);
         SceneSwitcher.instance.LoadSceneFancy(1);
     }
 
-    public void SelectVictorian() 
+    public void SelectVictorian()
     {
+        SceneSwitcher.score = 0;
+        AudioHandler.PlaySFX(button_press_sfx);
         SceneSwitcher.instance.LoadSceneFancy(5);
     }
     public void SelectEmo()
     {
+        SceneSwitcher.score = 0;
+        AudioHandler.PlaySFX(button_press_sfx);
         SceneSwitcher.instance.LoadSceneFancy(6);
     }
     public void SelectDevil()
     {
+        SceneSwitcher.score = 0;
+        AudioHandler.PlaySFX(button_press_sfx);
         SceneSwitcher.instance.LoadSceneFancy(7);
     }
     public void SelectFinale()
     {
+        SceneSwitcher.score = 0;
+        AudioHandler.PlaySFX(button_press_sfx);
         SceneSwitcher.instance.LoadSceneFancy(8);
     }
 
@@ -95,12 +109,14 @@ public class Menu : MonoBehaviour
             else { final_button.interactable = true; fin_score_disp.text = "HS: " + SceneSwitcher.instance.highscore_final; }
         }
 
+        AudioHandler.PlayMusic(ambience_music, true);
     }
 
 
 
     public void PointlessButton()
     {
+        AudioHandler.PlaySFX(button_press_sfx);
         SceneSwitcher.instance.gameObject.GetComponent<HighScores>().PointlessButton();
     }
 

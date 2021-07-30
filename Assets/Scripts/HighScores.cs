@@ -175,7 +175,7 @@ public class HighScores : MonoBehaviour
 
         for (int i = 0; i < high_scores.Length; i++)
         {
-            output += "#" + i + ":" + high_scores[i].name + "-" + high_scores[i].score + '\n';
+            output += "#" + i+1 + ":" + high_scores[i].name + "-" + high_scores[i].score + '\n';
         }
         //Debug.Log("V:" + output);
         Menu.instance.board_vic.text = output;
@@ -185,7 +185,7 @@ public class HighScores : MonoBehaviour
         output = "";
         for (int i = 0; i < high_scores.Length; i++)
         {
-            output += "#" + i + ":" + high_scores[i].name + "-" + high_scores[i].score + '\n';
+            output += "#" + i + 1 + ":" + high_scores[i].name + "-" + high_scores[i].score + '\n';
         }
         //Debug.Log("E:" + output);
         Menu.instance.board_emo.text = output;
@@ -195,7 +195,7 @@ public class HighScores : MonoBehaviour
         output = "";
         for (int i = 0; i < high_scores.Length; i++)
         {
-            output += "#" + i + ":" + high_scores[i].name + "-" + high_scores[i].score + '\n';
+            output += "#" + i + 1 + ":" + high_scores[i].name + "-" + high_scores[i].score + '\n';
         }
         //Debug.Log("D:" + output);
         Menu.instance.board_dev.text = output;
@@ -205,7 +205,7 @@ public class HighScores : MonoBehaviour
         output = "";
         for (int i = 0; i < high_scores.Length; i++)
         {
-            output += "#" + i + ":" + high_scores[i].name + "-" + high_scores[i].score + '\n';
+            output += "#" + i + 1 + ":" + high_scores[i].name + "-" + high_scores[i].score + '\n';
         }
         //Debug.Log("F:" + output);
         Menu.instance.board_fin.text = output;

@@ -23,18 +23,22 @@ public class AudioHandler : MonoBehaviour
     {
         source.PlayOneShot(clip);
     }
-    public static void PlayMusic(AudioClip clip)
+    public static void PlayMusic(AudioClip clip, bool should_loop)
     {
+        source.loop = should_loop;
         source.clip = clip;
         source.Play();
     }
-    public void JustPlay() 
+    public void JustPlay()
     {
+        source.loop = false;
         source.Play();
     }
 
     public static void PlayMusic(AudioClip clip, float delay)
     {
+        if (source.isPlaying && source.clip == clip) return;
+        
         source.clip = clip;
         instance.Invoke("JustPlay", delay);
     }

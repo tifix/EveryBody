@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueVictorOutroWL : DialogueWinLoss
 {
@@ -69,4 +70,21 @@ public class DialogueVictorOutroWL : DialogueWinLoss
                     break;
             }
     }
+
+    public override void Initialise()
+    {
+        base.Initialise();
+        e_sprite = Resources.Load<Sprite>("_oikea_victorian flut_happy") as Sprite;
+        angry_sprite = Resources.Load<Sprite>("victorian flut_angry") as Sprite;
+
+        if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
+        {
+            if (did_win) SR.sprite = e_sprite;
+            else SR.sprite = angry_sprite;
+
+
+        }
+    }
+
+
 }

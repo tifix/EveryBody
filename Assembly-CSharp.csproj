@@ -78,11 +78,11 @@
     <Compile Include="Assets\Scripts\BattleScripts\Beat.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\Note.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueIntro.cs" />
+    <Compile Include="Assets\Scripts\BattleScripts\NoteMarker.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\AnyKeyKill.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueWinLoss.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\NoteAnticipator.cs" />
-    <Compile Include="Assets\Scripts\BattleScripts\NoteMarker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Skiddadle.txt" />

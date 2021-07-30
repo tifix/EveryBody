@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueDevilOutroWL : DialogueWinLoss
 {
+
     public override void Dialogue() //the dialogue itself
     {
         if (!did_win) switch (i)
@@ -162,5 +164,19 @@ public class DialogueDevilOutroWL : DialogueWinLoss
                     Debug.LogWarning("overextending dialogue!");
                     break;
             }
+    }
+    public override void Initialise()
+    {
+        base.Initialise();
+        e_sprite = Resources.Load<Sprite>("Devil_Bored") as Sprite;
+        angry_sprite = Resources.Load<Sprite>("Devil_Bored") as Sprite;
+
+        if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
+        {
+            if (did_win) SR.sprite = e_sprite;
+            else SR.sprite = angry_sprite;
+
+
+        }
     }
 }

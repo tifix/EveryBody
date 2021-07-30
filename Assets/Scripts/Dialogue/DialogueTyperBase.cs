@@ -25,6 +25,9 @@ public class DialogueTyperBase : MonoBehaviour
     public float typingWait = 0.05f; //how much time passes between the letters typed
     public float base_typingWait = 0.05f; //how much time passes between the letters typed
 
+    protected Sprite e_sprite=null;
+    public AudioClip background_music;
+
     //setting the font
     public virtual void Awake()
     {
@@ -96,9 +99,36 @@ public class DialogueTyperBase : MonoBehaviour
         canSkip = false;
     }
 
-    public void Initialise() 
+    public virtual void Initialise() 
     {
         if (textBox == null) textBox = gameObject;
         if (txt == null) txt = gameObject.GetComponent<Text>();
+
+        background_music = Resources.Load<AudioClip>("finnishhell_ambience") as AudioClip;
+        AudioHandler.PlayMusic(background_music, true);
     }
+
+    public void SwapInSmallEnemyGraphic(string _name) 
+    {
+        e_sprite = Resources.Load<Sprite>(_name) as Sprite;
+        background_music = Resources.Load<AudioClip>("finnishhell_ambience") as AudioClip;
+        AudioHandler.PlayMusic(background_music, true);
+
+        if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
+        {
+            SR.sprite = e_sprite;
+        }
+    }
+    public void SwapInSmallEnemyGraphic(string _name, AudioClip audio)
+    {
+        e_sprite = Resources.Load<Sprite>(_name) as Sprite;
+
+        AudioHandler.PlayMusic(audio, true);
+
+        if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
+        {
+            SR.sprite = e_sprite;
+        }
+    }
+
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueVictorInter : DialogueTyperBase
 {
@@ -181,4 +182,11 @@ public class DialogueVictorInter : DialogueTyperBase
                 break;
         }
     }
+    public override void Initialise()
+    {
+        base.Initialise();
+
+        SwapInSmallEnemyGraphic("_oikea_victorian flut_happy",Resources.Load<AudioClip>("victoriantheme")as AudioClip);
+    }
+
 }

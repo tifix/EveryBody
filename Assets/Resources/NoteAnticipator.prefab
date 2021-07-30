@@ -14599,3 +14599,5 @@ MonoBehaviour:
   ps_miss: {fileID: 5614140675489027928}
   ps_hit: {fileID: 5309211190886625099}
   is_vanished: 0
+  miss_SFX: {fileID: 8300000, guid: b4385bc7fe8c05545bc999dcf977f2e8, type: 3}
+  hit_SFX: {fileID: 8300000, guid: cf21fcbd577889b439558e69f783c279, type: 3}

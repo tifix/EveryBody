@@ -10,7 +10,8 @@ public class NoteMarker : MoveAndDie
     public ParticleSystem ps_miss;
     public ParticleSystem ps_hit;
     public bool is_vanished = false;
-
+    [SerializeField] private AudioClip miss_SFX;
+    [SerializeField] private AudioClip hit_SFX;
     public override void Start()
     {
         Invoke("Vanish", lifespan);
@@ -23,6 +24,7 @@ public class NoteMarker : MoveAndDie
     {
         StartCoroutine(Vanish());
         ps_miss.Play();
+        AudioHandler.PlaySFX(miss_SFX);
     }
 
     public IEnumerator Vanish() 
@@ -56,7 +58,9 @@ public class NoteMarker : MoveAndDie
                 if (!ps_hit.isEmitting) ps_hit.Play();
             } else ps_hit.Stop();
 
-            if (!SongReciever.instance.current_notes.Contains(sibling_note)) break;
+            if (!SongReciever.instance.current_notes.Contains(sibling_note)) 
+                { yield return new WaitForSeconds(0.15f);  break; 
+                }
             yield return null;
         }
         if(sibling_note.state == Note.note_state.hit) Destroy(gameObject);

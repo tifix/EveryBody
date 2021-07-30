@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueEmoOutroWL : DialogueWinLoss
 {
+
     public override void Dialogue() //the dialogue itself
     {
         if (did_win) switch (i)
@@ -59,5 +61,19 @@ public class DialogueEmoOutroWL : DialogueWinLoss
                     Debug.LogWarning("overextending dialogue!");
                     break;
             }
+    }
+    public override void Initialise() 
+    {
+        base.Initialise();
+        e_sprite = Resources.Load<Sprite>("SynthGuy_Happy") as Sprite;
+        angry_sprite = Resources.Load<Sprite>("SynthGuy_Angry") as Sprite;
+
+        if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
+        {
+            if(did_win) SR.sprite = e_sprite;
+            else SR.sprite = angry_sprite;
+
+
+        }
     }
 }

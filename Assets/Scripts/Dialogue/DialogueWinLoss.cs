@@ -7,6 +7,8 @@ public class DialogueWinLoss : DialogueTyperBase
     public bool did_win=false;
     public int points_to_win = 300;
 
+    protected Sprite angry_sprite;
+
     public override void Awake() 
     {
         base.Awake();
@@ -18,6 +20,10 @@ public class DialogueWinLoss : DialogueTyperBase
         if(did_win) switch (i)
         {
             case 0:
+                if (e_sprite != null)
+                {
+                GameObject.Find("Frame_Enemy").GetComponent<SpriteRenderer>().sprite = e_sprite;
+                }
                 typingWait = base_typingWait;
                 dialog = "yEAAAAAA";
                 Coroutine();
@@ -34,6 +40,10 @@ public class DialogueWinLoss : DialogueTyperBase
         if (!did_win) switch (i)
             {
                 case 0:
+                    if (angry_sprite != null)
+                    {
+                        GameObject.Find("Frame_Enemy").GetComponent<SpriteRenderer>().sprite = angry_sprite;
+                    }
                     typingWait = base_typingWait;
                     dialog = "Noooooo";
                     Coroutine();
