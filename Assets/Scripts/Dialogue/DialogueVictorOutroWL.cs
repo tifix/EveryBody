@@ -74,7 +74,9 @@ public class DialogueVictorOutroWL : DialogueWinLoss
     public override void Initialise()
     {
         base.Initialise();
-        e_sprite = Resources.Load<Sprite>("_oikea_victorian flut_happy") as Sprite;
+        points_to_win = 400;
+
+        e_sprite = Resources.Load<Sprite>("victorian flut_happy") as Sprite;
         angry_sprite = Resources.Load<Sprite>("victorian flut_angry") as Sprite;
 
         if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))

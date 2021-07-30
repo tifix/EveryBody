@@ -60,7 +60,7 @@ public class SongReciever : MonoBehaviour
 
         }
 
-        Debug.LogWarning("song finished");
+        Debug.LogWarning("song finished"+Time.time);
 
         yield return new WaitForSeconds(final_cool_off);
         SceneSwitcher.instance.LoadSceneDialogue(DialogueOnCompletion); //load fight outro dialogue

@@ -10,6 +10,7 @@ public class DialogueEmoIntro : DialogueTyperBase
         switch (i)
         {
             case 0:
+                SwapInSmallEnemyGraphic("victorian flut_happy");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 typingWait = base_typingWait;
@@ -23,6 +24,7 @@ public class DialogueEmoIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 2:
+                SwapInSmallEnemyGraphic("victorian flut_angry");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 typingWait = base_typingWait;
@@ -43,6 +45,7 @@ public class DialogueEmoIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 5:
+                SwapInEmpty();
                 txt.color = col_emo;
                 font = Resources.Load<Font>("Fonts/old evils");
                 dialog = "I remember when I came here…";
@@ -55,6 +58,7 @@ public class DialogueEmoIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 7:
+                SwapInSmallEnemyGraphic("victorian flut_angry");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 typingWait = base_typingWait;
@@ -80,6 +84,7 @@ public class DialogueEmoIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 11:
+                SwapInEmpty();
                 txt.color = col_emo;
                 font = Resources.Load<Font>("Fonts/old evils");
                 dialog = "The Devil… is not easily won over.";
@@ -94,6 +99,7 @@ public class DialogueEmoIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 14:
+                SwapInSmallEnemyGraphic("victorian flut_angry");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 typingWait = base_typingWait;
@@ -101,6 +107,7 @@ public class DialogueEmoIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 15:
+                SwapInEmpty();
                 txt.color = col_emo;
                 font = Resources.Load<Font>("Fonts/old evils");
                 typingWait = base_typingWait;
@@ -125,6 +132,7 @@ public class DialogueEmoIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 19:
+                SwapInSmallEnemyGraphic("victorian flut_angry");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 typingWait = base_typingWait;
@@ -132,6 +140,7 @@ public class DialogueEmoIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 20:
+                SwapInSmallEnemyGraphic("SynthGuy_Angry");
                 txt.color = col_emo;
                 font = Resources.Load<Font>("Fonts/old evils");
                 typingWait = base_typingWait;
@@ -178,6 +187,7 @@ public class DialogueEmoIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 28:
+                SwapInSmallEnemyGraphic("victorian flut_angry");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 typingWait = base_typingWait;
@@ -201,7 +211,7 @@ public class DialogueEmoIntro : DialogueTyperBase
     public override void Initialise()
     {
         base.Initialise();
-        e_sprite = Resources.Load<Sprite>("_oikea_victorian flut_happy") as Sprite;
+        e_sprite = Resources.Load<Sprite>("victorian flut_happy") as Sprite;
 
         if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
         {

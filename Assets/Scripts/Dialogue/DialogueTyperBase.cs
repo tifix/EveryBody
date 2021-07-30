@@ -111,11 +111,10 @@ public class DialogueTyperBase : MonoBehaviour
     public void SwapInSmallEnemyGraphic(string _name) 
     {
         e_sprite = Resources.Load<Sprite>(_name) as Sprite;
-        background_music = Resources.Load<AudioClip>("finnishhell_ambience") as AudioClip;
-        AudioHandler.PlayMusic(background_music, true);
 
         if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
         {
+            SR.color = new Color(1, 1, 1, 1);
             SR.sprite = e_sprite;
         }
     }
@@ -127,8 +126,22 @@ public class DialogueTyperBase : MonoBehaviour
 
         if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
         {
+            SR.color = new Color(1,1,1,1);
             SR.sprite = e_sprite;
         }
+    }
+    public void SwapInSmallEnemyAudio(AudioClip audio)
+    {
+        AudioHandler.PlayMusic(audio, true);
+        
+    }
+    public void SwapInEmpty()
+    {
+        if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
+        {
+            SR.color = new Color(1, 1, 1, 0);
+        }
+
     }
 
 }

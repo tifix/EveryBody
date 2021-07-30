@@ -53,7 +53,7 @@ public class NoteMarker : MoveAndDie
         yield return new WaitForSeconds(1);
         while (true) 
         {
-            if(ArrayUtility.Contains(PlayerInput.instance.cur_input.ToCharArray(), sibling_note.input) && sibling_note.state==Note.note_state.hit) //if pressing the right note
+            if(PlayerInput.instance.cur_input.Contains(sibling_note.input.ToString())&& sibling_note.state == Note.note_state.hit)            //if pressing the right note
             {
                 if (!ps_hit.isEmitting) ps_hit.Play();
             } else ps_hit.Stop();

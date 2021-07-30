@@ -10,6 +10,7 @@ public class DialogueVictorInter : DialogueTyperBase
         switch (i)
         {
             case 0:
+                SwapInEmpty();
                 txt.color = col_player;
                 font = Resources.Load<Font>("Fonts/Love Taking");
                 typingWait = base_typingWait * 2f;
@@ -27,6 +28,8 @@ public class DialogueVictorInter : DialogueTyperBase
                 Coroutine();
                 break;
             case 3:
+                //SwapInSmallEnemyGraphic("victorian flut_angry");
+                SwapInSmallEnemyGraphic("victorian flut_happy");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 dialog = "I heard thee play.";
@@ -54,6 +57,7 @@ public class DialogueVictorInter : DialogueTyperBase
                 Coroutine();
                 break;
             case 7:
+                SwapInSmallEnemyGraphic("victorian flut_angry");
                 txt.color = col_victoria;
                 typingWait = base_typingWait;
                 font = Resources.Load<Font>("Fonts/Olondon_");
@@ -186,7 +190,9 @@ public class DialogueVictorInter : DialogueTyperBase
     {
         base.Initialise();
 
-        SwapInSmallEnemyGraphic("_oikea_victorian flut_happy",Resources.Load<AudioClip>("victoriantheme")as AudioClip);
+        SwapInSmallEnemyAudio(Resources.Load<AudioClip>("victoriantheme") as AudioClip);
+        //SwapInSmallEnemyGraphic("victorian flut_happy");
+        //SwapInSmallEnemyGraphic("victorian flut_angry");
     }
 
 }
