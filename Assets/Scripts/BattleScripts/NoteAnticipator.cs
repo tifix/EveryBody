@@ -43,7 +43,7 @@ public class NoteAnticipator : MonoBehaviour
         GameObject anticip_note = GameObject.Instantiate(note_prefab,transf.position,Quaternion.identity);
         anticip_note.transform.SetParent(instance.transform);
         anticip_note.transform.localScale = new Vector3(3000 * sibling.duration*SongReciever.instance.beat_interval, 324, 0);
-        anticip_note.GetComponent<MoveAndDie>().sibling_note = sibling;
+        anticip_note.GetComponent<NoteMarker>().sibling_note = sibling;
 
         return anticip_note;
     }

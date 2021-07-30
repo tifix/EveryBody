@@ -10,7 +10,7 @@ public class Note
     [Tooltip("length of note where 0.25 is a quarter of a beat")] public float duration;      //stands for the length of the note in terms of beats > 0.5 is halfnote, 0.25 is quarternote etc
     [Tooltip("which key to press")] public char input='a';
     
-    [HideInInspector] public note_state state=note_state.incoming;
+    public note_state state=note_state.incoming;
     [HideInInspector] public GameObject sibling_anticipator = null;
 
     public enum note_state{incoming,active,missed, hit }        
@@ -31,6 +31,8 @@ public class Note
 
     public void play() 
     {
+        state = note_state.incoming;
+
         Debug.Log("spawned "+input);
         switch (input)
         {

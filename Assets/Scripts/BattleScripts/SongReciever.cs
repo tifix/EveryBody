@@ -13,7 +13,7 @@ public class SongReciever : MonoBehaviour
     public float beat_interval;
     public AudioClip track_audio;
 
-    [HideInInspector] public List<Note> current_notes = new List<Note>();
+     public List<Note> current_notes = new List<Note>();
     [Header("Track progression")]
     public float initial_warm_up = 5;   //time before the first note goes;
     public float final_cool_off = 5;   //time after the last note before moving on;
@@ -72,7 +72,6 @@ public class SongReciever : MonoBehaviour
         note.state = Note.note_state.active;
         current_notes.Add(note);
         SpriteRenderer SR = note.sibling_anticipator.GetComponent<SpriteRenderer>();
-        SR.color = Color.magenta;
         
 
         yield return new WaitForSeconds(note.duration*beat_interval);

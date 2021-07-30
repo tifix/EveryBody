@@ -161,10 +161,16 @@ public class SceneSwitcher : MonoBehaviour
                 if(score> highscore_devil) highscore_devil = Mathf.FloorToInt(score);
                 cur_dialogue = DialogueDisplayer.gameObject.AddComponent(typeof(DialogueDevilOutroWL)) as DialogueWinLoss;      //typeof(DialogueVictorInter)) as DialogueTyperBase;
                 cur_dialogue.Initialise();
+                score = 0;
                 break;
             case "outro":
                 if (score > highscore_final) highscore_final = Mathf.FloorToInt(score);
                 break;
         }
+    }
+
+    public void CloseGame() 
+    {
+        Application.Quit();
     }
 }

@@ -48,6 +48,8 @@ public class Menu : MonoBehaviour
     }
     public void ToggleHighScores()
     {
+        if(!hs_panel.activeInHierarchy) SceneSwitcher.instance.gameObject.GetComponent<HighScores>().UpdateHSDisplay(); 
+
         hs_panel.SetActive(!hs_panel.activeInHierarchy);
         if (levelselect_panel.activeInHierarchy) levelselect_panel.SetActive(false);
         if (cretits_panel.activeInHierarchy) cretits_panel.SetActive(false);
@@ -95,11 +97,7 @@ public class Menu : MonoBehaviour
 
     }
 
-    
-    public void FetchHighscores() 
-    {
-        SceneSwitcher.instance.gameObject.GetComponent<HighScores>().UpdateHSDisplay();
-    }
+
 
     public void PointlessButton()
     {

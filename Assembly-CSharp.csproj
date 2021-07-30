@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\AnyKeyKill.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueWinLoss.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\NoteAnticipator.cs" />
+    <Compile Include="Assets\Scripts\BattleScripts\NoteMarker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Skiddadle.txt" />

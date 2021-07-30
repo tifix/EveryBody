@@ -139,7 +139,7 @@ public class HighScores : MonoBehaviour
 
         if (string.IsNullOrEmpty(www.error))
         {
-            Debug.LogWarning("download succesfull:" + www.downloadHandler.text);
+            Debug.LogWarning("download succesfull:" + www.downloadHandler.text);    //if(SceneSwitcher.instance.is_debugging) 
             FormatHighscore(www.downloadHandler.text);
         }
         else Debug.LogWarning("upload error: " + www.error);
@@ -159,7 +159,6 @@ public class HighScores : MonoBehaviour
             int score = int.Parse(entries[i].Split('|')[1]);
 
             high_scores[i] = new Entry(name, score);
-            Debug.Log(high_scores[i]);
         }
 
         return high_scores;
