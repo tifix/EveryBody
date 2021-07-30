@@ -6,14 +6,13 @@ public class MoveAndDie : MonoBehaviour
 {
     public Vector3 movement;
     public float lifespan;
-    public Note sibling_note;
 
-    private void Start()
+    public virtual void Start()
     {
         Destroy(gameObject, lifespan);
     }
 
-    void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         transform.position += movement;
     }

@@ -110,10 +110,23 @@ public class PlayerInput : MonoBehaviour
     {
         foreach (Note note in SongReciever.instance.current_notes)
         {
-            if (ArrayUtility.Contains(cur_input.ToCharArray(), note.input) && note.state == Note.note_state.hit)
+            if (note.state == Note.note_state.hit)
             {
-                SceneSwitcher.score += note_sustain_points * multiplier;
-                score_text.text = Mathf.FloorToInt(SceneSwitcher.score).ToString();
+                if(ArrayUtility.Contains(cur_input.ToCharArray(), note.input)) 
+                {
+                    SceneSwitcher.score += note_sustain_points * multiplier;
+                    score_text.text = Mathf.FloorToInt(SceneSwitcher.score).ToString();
+                }
+                /*
+                else 
+                {
+                    Debug.Log("long not let go");
+                    note.sibling_anticipator.GetComponent<NoteMarker>().Vanish();
+                    note.sibling_anticipator.GetComponent<NoteMarker>().StopLongEmit();     //continous_emitting = false;
+                }
+              */
+
+
             }
         }
     }
