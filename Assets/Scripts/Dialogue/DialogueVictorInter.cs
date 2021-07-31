@@ -28,6 +28,7 @@ public class DialogueVictorInter : DialogueTyperBase
                 Coroutine();
                 break;
             case 3:
+                SwapInResize(0.6f);
                 //SwapInSmallEnemyGraphic("victorian flut_angry");
                 SwapInSmallEnemyGraphic("victorian flut_happy");
                 txt.color = col_victoria;
@@ -43,6 +44,7 @@ public class DialogueVictorInter : DialogueTyperBase
                 Coroutine();
                 break;
             case 5:
+                SwapInResize(0.8f);
                 txt.color = col_victoria;
                 typingWait = base_typingWait;
                 font = Resources.Load<Font>("Fonts/Olondon_");
@@ -57,6 +59,7 @@ public class DialogueVictorInter : DialogueTyperBase
                 Coroutine();
                 break;
             case 7:
+                SwapInResize(1f);
                 SwapInSmallEnemyGraphic("victorian flut_angry");
                 txt.color = col_victoria;
                 typingWait = base_typingWait;

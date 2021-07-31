@@ -152,14 +152,16 @@ public class HighScores : MonoBehaviour
     {
         string[] entries = input_string.Split(new char[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
         high_scores = new Entry[entries.Length];
+        if (high_scores.Length > 10) high_scores = new Entry[10];
 
-        for (int i = 0; i < entries.Length; i++)
+        for (int i = 0; i < high_scores.Length; i++)
         {
             string name = entries[i].Split('|')[0];
             int score = int.Parse(entries[i].Split('|')[1]);
 
             high_scores[i] = new Entry(name, score);
         }
+
 
         return high_scores;
     }

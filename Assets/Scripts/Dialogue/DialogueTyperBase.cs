@@ -143,5 +143,11 @@ public class DialogueTyperBase : MonoBehaviour
         }
 
     }
-
+    public void SwapInResize(float scale) 
+    {
+        if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
+        {
+            SR.gameObject.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, 1);
+        }
+    }
 }

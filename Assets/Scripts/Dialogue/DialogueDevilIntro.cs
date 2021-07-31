@@ -140,16 +140,19 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 17:
+                SwapInResize(1.1f);
                 typingWait = base_typingWait * 0.8f;
                 dialog = "or maybe it is more about you than to you. . .";
                 Coroutine();
                 break;
             case 18:
+                SwapInResize(1.2f);
                 typingWait = base_typingWait * 0.6f;
                 dialog = "I have 10 000 of them in fact...";
                 Coroutine();
                 break;
             case 19:
+                SwapInResize(1.0f);
                 SwapInEmpty();
                 txt.color = col_devil;
                 font = Resources.Load<Font>("Fonts/AngerStyles");
