@@ -3057,7 +3057,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: credits
+  m_Text: Credits
 --- !u!222 &1241249583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5167,7 +5167,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: level select
+  m_Text: Level select
 --- !u!222 &2113515855
 CanvasRenderer:
   m_ObjectHideFlags: 0

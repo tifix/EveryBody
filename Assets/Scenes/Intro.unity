@@ -302,6 +302,8 @@ MonoBehaviour:
   canSkip: 0
   typingWait: 0.05
   base_typingWait: 0.05
+  background_music: {fileID: 0}
+  is_waiting: 0
   sign_neoning: {fileID: 1793908847}
   background: {fileID: 1157226956}
 --- !u!1 &197946367
@@ -508,6 +510,10 @@ PrefabInstance:
     - target: {fileID: 2706097879652921210, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
       propertyPath: m_Name
       value: ScripteusTheEternal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437372628319865254, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa3b0fb7d31357548946a074e77d4916, type: 3}

@@ -96,9 +96,10 @@ public class SceneSwitcher : MonoBehaviour
             scene_transitioning = true;
 
             int scene_number = 2;
-            if(dialogue=="outro") scene_number = 3;
+            if (dialogue == "outro") { scene_number = 3; instance.anim.SetTrigger("TriggerFlash");AudioHandler.PlaySFX(Resources.Load<AudioClip>("Explosion") as AudioClip); }
+            else { instance.anim.SetTrigger("TriggerCrossfade"); }
 
-            instance.anim.SetTrigger("TriggerCrossfade");
+            
             yield return new WaitForSeconds(0.95f);
             instance.anim.speed = 0.1f;
             AsyncOperation async = SceneManager.LoadSceneAsync(scene_number, LoadSceneMode.Single);
