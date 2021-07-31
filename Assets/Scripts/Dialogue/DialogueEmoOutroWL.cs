@@ -26,6 +26,7 @@ public class DialogueEmoOutroWL : DialogueWinLoss
                     Coroutine();
                     break;
                 case 3:
+                    SwapInSmallEnemyGraphic("SynthGuy_Angry");
                     dialog = "Or, you know. Whatever.";
                     Coroutine();
                     break;
@@ -65,6 +66,8 @@ public class DialogueEmoOutroWL : DialogueWinLoss
     public override void Initialise() 
     {
         base.Initialise();
+        points_to_win = 1200;
+
         e_sprite = Resources.Load<Sprite>("SynthGuy_Happy") as Sprite;
         angry_sprite = Resources.Load<Sprite>("SynthGuy_Angry") as Sprite;
 

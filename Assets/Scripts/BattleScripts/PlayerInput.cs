@@ -84,7 +84,7 @@ public class PlayerInput : MonoBehaviour
 
         foreach (Note note in SongReciever.instance.current_notes)
         {
-            if (ArrayUtility.Contains(cur_input.ToCharArray(), note.input) && note.state!=Note.note_state.hit)
+            if (PlayerInput.instance.cur_input.Contains(note.input.ToString())  && note.state!=Note.note_state.hit)
             {
                 Debug.Log("Hit!");
                 note.state = Note.note_state.hit;
@@ -103,6 +103,7 @@ public class PlayerInput : MonoBehaviour
                 score_text.text = Mathf.FloorToInt(SceneSwitcher.score).ToString();
             }
 
+            if (!PlayerInput.instance.cur_input.Contains(note.input.ToString())) { SceneSwitcher.score -= 5; score_text.text = Mathf.FloorToInt(SceneSwitcher.score).ToString(); }
         }
     }
 
@@ -112,10 +113,14 @@ public class PlayerInput : MonoBehaviour
         {
             if (note.state == Note.note_state.hit)
             {
-                if(ArrayUtility.Contains(cur_input.ToCharArray(), note.input)) 
+                if(PlayerInput.instance.cur_input.Contains(note.input.ToString())) 
                 {
                     SceneSwitcher.score += note_sustain_points * multiplier;
                     score_text.text = Mathf.FloorToInt(SceneSwitcher.score).ToString();
+                }
+                else 
+                {
+                    SceneSwitcher.score -= 0.5f*note_sustain_points; score_text.text = Mathf.FloorToInt(SceneSwitcher.score).ToString();
                 }
                 /*
                 else 

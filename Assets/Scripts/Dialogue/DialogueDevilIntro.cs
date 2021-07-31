@@ -10,6 +10,7 @@ public class DialogueDevilIntro : DialogueTyperBase
         switch (i)
         {
             case 0:
+                SwapInSmallEnemyGraphic("victorian flut_happy");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 typingWait = base_typingWait * 1.3f;
@@ -23,7 +24,8 @@ public class DialogueDevilIntro : DialogueTyperBase
                 dialog = "Yes, I know the concept.";
                 Coroutine();
                 break;
-            case 2:
+            case 2:         //SynthGuy_Angry
+                SwapInSmallEnemyGraphic("SynthGuy_Angry");
                 txt.color = col_emo;
                 typingWait = base_typingWait * 1.3f;
                 font = Resources.Load<Font>("Fonts/old evils");
@@ -31,6 +33,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 3:
+                SwapInSmallEnemyGraphic("victorian flut_happy");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 typingWait = base_typingWait * 0.75f;
@@ -59,6 +62,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 7:
+                SwapInSmallEnemyGraphic("SynthGuy_Angry");
                 txt.color = col_emo;
                 typingWait = base_typingWait * 1.3f;
                 font = Resources.Load<Font>("Fonts/old evils");
@@ -66,6 +70,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 8:
+                SwapInSmallEnemyGraphic("SynthGuy_Happy");
                 txt.color = col_emo;
                 typingWait = base_typingWait * 1.5f;
                 font = Resources.Load<Font>("Fonts/old evils");
@@ -73,6 +78,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 9:
+                SwapInSmallEnemyGraphic("victorian flut_happy");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 typingWait = base_typingWait * 1f;
@@ -87,6 +93,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 11:
+                SwapInSmallEnemyGraphic("victorian flut_angry");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 typingWait = base_typingWait * 0.5f;
@@ -101,6 +108,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 13:
+                SwapInEmpty();
                 txt.color = col_devil;
                 font = Resources.Load<Font>("Fonts/AngerStyles");
                 typingWait = base_typingWait*1.7f;
@@ -108,6 +116,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 14:
+                SwapInSmallEnemyGraphic("SynthGuy_Happy");
                 txt.color = col_emo;
                 typingWait = base_typingWait * 3f;
                 font = Resources.Load<Font>("Fonts/old evils");
@@ -115,6 +124,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 15:
+                SwapInSmallEnemyGraphic("victorian flut_angry");
                 txt.color = col_victoria;
                 typingWait = base_typingWait * 2.5f;
                 font = Resources.Load<Font>("Fonts/Olondon_");
@@ -122,6 +132,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 16:
+                SwapInSmallEnemyGraphic("SynthGuy_Happy");
                 txt.color = col_emo;
                 typingWait = base_typingWait * 1f;
                 font = Resources.Load<Font>("Fonts/old evils");
@@ -129,16 +140,20 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 17:
+                SwapInResize(1.1f);
                 typingWait = base_typingWait * 0.8f;
                 dialog = "or maybe it is more about you than to you. . .";
                 Coroutine();
                 break;
             case 18:
+                SwapInResize(1.2f);
                 typingWait = base_typingWait * 0.6f;
                 dialog = "I have 10 000 of them in fact...";
                 Coroutine();
                 break;
             case 19:
+                SwapInResize(1.0f);
+                SwapInEmpty();
                 txt.color = col_devil;
                 font = Resources.Load<Font>("Fonts/AngerStyles");
                 typingWait = base_typingWait;
@@ -146,6 +161,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 20:
+                SwapInSmallEnemyGraphic("Devil_Bored");
                 /*
                  * 
                  * 
@@ -234,6 +250,8 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 32:
+
+                SwapInSmallEnemyGraphic("victorian flut_happy");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
                 typingWait = base_typingWait * 0.92f;
@@ -241,6 +259,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 33:
+                SwapInSmallEnemyGraphic("SynthGuy_Happy");
                 txt.color = col_emo;
                 font = Resources.Load<Font>("Fonts/old evils");
                 typingWait = base_typingWait * 0.92f;
@@ -248,6 +267,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 34:
+                SwapInSmallEnemyGraphic("Devil_Bored");
                 txt.color = col_devil;
                 font = Resources.Load<Font>("Fonts/AngerStyles");
                 typingWait = base_typingWait * 1.1f;
@@ -272,7 +292,7 @@ public class DialogueDevilIntro : DialogueTyperBase
     public override void Initialise()
     {
         base.Initialise();
-        e_sprite = Resources.Load<Sprite>("_oikea_victorian flut_happy") as Sprite;
+        e_sprite = Resources.Load<Sprite>("victorian flut_happy") as Sprite;
 
         if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))
         {

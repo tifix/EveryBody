@@ -130,9 +130,6 @@ public class SceneSwitcher : MonoBehaviour
 
     private void BakeDialogue(string dialogue)
     {
-        bool did_pass = false;
-        if (score > 250) did_pass = true;
-
         DialogueDisplayer = GameObject.Find("TextMain").GetComponent<Text>();    //Highly unstable, ensure the text displayer has the proper name
         switch (dialogue)
         {

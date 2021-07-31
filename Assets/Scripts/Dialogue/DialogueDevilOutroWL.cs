@@ -11,6 +11,7 @@ public class DialogueDevilOutroWL : DialogueWinLoss
         if (!did_win) switch (i)
             {
                 case 0:
+                    SwapInSmallEnemyGraphic("Devil_Bored");
                     txt.color = col_devil;
                     font = Resources.Load<Font>("Fonts/AngerStyles");
                     typingWait = base_typingWait;
@@ -35,6 +36,7 @@ public class DialogueDevilOutroWL : DialogueWinLoss
         if (did_win) switch (i)
             {
                 case 0:
+                    SwapInSmallEnemyGraphic("Devil_Bored");
                     txt.color = col_devil;
                     font = Resources.Load<Font>("Fonts/AngerStyles");
                     typingWait = base_typingWait;
@@ -134,6 +136,7 @@ public class DialogueDevilOutroWL : DialogueWinLoss
                     Coroutine();
                     break;
                 case 18:
+                    SwapInSmallEnemyGraphic("victorian flut_angry");
                     txt.color = col_victoria;
                     font = Resources.Load<Font>("Fonts/Olondon_");
                     typingWait = base_typingWait * 0.6f;
@@ -141,6 +144,7 @@ public class DialogueDevilOutroWL : DialogueWinLoss
                     Coroutine();
                     break;
                 case 19:
+                    SwapInEmpty();
                     txt.color = col_player;
                     font = Resources.Load<Font>("Fonts/Love Taking");
                     typingWait = base_typingWait * 1.2f;
@@ -168,6 +172,8 @@ public class DialogueDevilOutroWL : DialogueWinLoss
     public override void Initialise()
     {
         base.Initialise();
+        points_to_win = 3500;
+
         e_sprite = Resources.Load<Sprite>("Devil_Bored") as Sprite;
         angry_sprite = Resources.Load<Sprite>("Devil_Bored") as Sprite;
 

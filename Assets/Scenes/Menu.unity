@@ -1855,11 +1855,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '#1-this
 
-    #2-will
+    #2-leaderboard
 
-    #3-instantly
+    #3-is
 
-    #4-vanish'
+    #4-loading'
 --- !u!222 &763131783
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2974,11 +2974,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '#1-this
 
-    #2-will
+    #2-leaderboard
 
-    #3-instantly
+    #3-is
 
-    #4-vanish'
+    #4-loading'
 --- !u!222 &1158209918
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3217,11 +3217,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '#1-this
 
-    #2-will
+    #2-leaderboard
 
-    #3-instantly
+    #3-is
 
-    #4-vanish'
+    #4-loading'
 --- !u!222 &1334752782
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3381,11 +3381,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '#1-this
 
-    #2-will
+    #2-leaderboard
 
-    #3-instantly
+    #3-is
 
-    #4-vanish'
+    #4-loading'
 --- !u!222 &1380730537
 CanvasRenderer:
   m_ObjectHideFlags: 0

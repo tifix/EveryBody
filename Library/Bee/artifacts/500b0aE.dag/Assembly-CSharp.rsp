@@ -341,6 +341,7 @@
 "Assets/Scripts/BattleScripts/PlayerInput.cs"
 "Assets/Scripts/BattleScripts/PulsingMovement.cs"
 "Assets/Scripts/BattleScripts/SongReciever.cs"
+"Assets/Scripts/Devil_ting.cs"
 "Assets/Scripts/Dialogue/DialogueDevilIntro.cs"
 "Assets/Scripts/Dialogue/DialogueDevilOutroWL.cs"
 "Assets/Scripts/Dialogue/DialogueEmoIntro.cs"
