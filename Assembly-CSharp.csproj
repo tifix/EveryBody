@@ -69,9 +69,10 @@
     <Compile Include="Assets\Scripts\HighScores.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\MoveAndDie.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
-    <Compile Include="Assets\Scripts\Devil_ting.cs" />
+    <Compile Include="Assets\Scripts\BattleScripts\Devil_ting.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueOutro.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueDevilOutroWL.cs" />
+    <Compile Include="Assets\animator_utils.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueVictorOutroWL.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\SongReciever.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\ComboDisp.cs" />
@@ -84,7 +85,6 @@
     <Compile Include="Assets\Scripts\AnyKeyKill.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueWinLoss.cs" />
     <Compile Include="Assets\Scripts\BattleScripts\NoteAnticipator.cs" />
-    <Compile Include="Assets\animator_utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Skiddadle.txt" />

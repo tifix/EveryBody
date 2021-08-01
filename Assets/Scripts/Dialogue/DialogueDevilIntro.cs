@@ -108,6 +108,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 13:
+                SwapInSmallEnemyAudio(Resources.Load<AudioClip>("DEVILTHEMESCREAM")as AudioClip);
                 SwapInEmpty();
                 txt.color = col_devil;
                 font = Resources.Load<Font>("Fonts/AngerStyles");
@@ -159,9 +160,13 @@ public class DialogueDevilIntro : DialogueTyperBase
                 typingWait = base_typingWait;
                 dialog = "What do we have going on here?";
                 Coroutine();
+                AudioHandler.source.Stop();
+                SwapInSmallEnemyAudio(Resources.Load<AudioClip>("devilringtone") as AudioClip, false);
+                AudioHandler.source.Play();
                 break;
             case 20:
                 SwapInSmallEnemyGraphic("Devil_Bored");
+
                 /*
                  * 
                  * 
@@ -181,6 +186,7 @@ public class DialogueDevilIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 22:
+                SwapInSmallEnemyAudio(Resources.Load<AudioClip>("finnishhell_ambience") as AudioClip);
                 font = Resources.Load<Font>("Fonts/AngerStyles");
                 typingWait = base_typingWait;
                 dialog = "I want to know why you are making such a fuss in my backyard.";
@@ -231,6 +237,7 @@ public class DialogueDevilIntro : DialogueTyperBase
              * 
              */
             case 29:
+                SwapInSmallEnemyAudio(Resources.Load<AudioClip>("DEVILTHEMESCREAM") as AudioClip);
                 font = Resources.Load<Font>("Fonts/AngerStyles");
                 typingWait = base_typingWait * 1.2f;
                 dialog = "Something new always pops up…";

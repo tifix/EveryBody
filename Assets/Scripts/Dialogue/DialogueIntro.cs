@@ -25,6 +25,7 @@ public class DialogueIntro : DialogueTyperBase
                 dialog = " ";
                 Coroutine();
                 StartCoroutine(Waiter(2.5f));
+                AudioHandler.PlaySFX(Resources.Load<AudioClip>("NeonSignFlickering") as AudioClip,0.25f);
                 sign_neoning.SetTrigger("ShowSign");
                 //AudioHandler.PlaySFX(neon_flicker)
                 typingWait = base_typingWait * 1.2f;

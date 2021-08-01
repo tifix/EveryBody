@@ -6,20 +6,21 @@ using UnityEngine.Networking;
 
 public class HighScores : MonoBehaviour
 {
-    const string private_code_vic = "_Um4cNUohUmbJn2wzffI3QtMrgIJw3t0at9irr4gZ72g";
-    const string public_code_vic = "610186c08f40bb8ea04bdd0d";
+    //victoria leaderboards at// lb/NahH015Fl0WOSd-TMIA7PgieqPQVKAX0WWt2K7le2U5g
+    const string private_code_vic = "NahH015Fl0WOSd-TMIA7PgieqPQVKAX0WWt2K7le2U5g";
+    const string public_code_vic = "6105756e778d3cc600517b3e";
 
-    //emo leaderboards at lb/W5MQ0QLhFkmKBOjV73ELxgfT12qtv85km-WVkysBdOXw
-    const string private_code_emo = "W5MQ0QLhFkmKBOjV73ELxgfT12qtv85km-WVkysBdOXw";
-    const string public_code_emo = "6101f7378f40bb8ea04c50d5";
+    //emo leaderboards at lb/DZBHqBoYrESsZeSrrkEsrgoQse4z8FZka19KKRprX7Zg
+    const string private_code_emo = "DZBHqBoYrESsZeSrrkEsrgoQse4z8FZka19KKRprX7Zg";
+    const string public_code_emo = "610575d6778d3cc600517b43";
 
-    //   lb/m9qzrEV7pkuwfEsLntF7GgpueMndNFZE2tA0sOAUauXQ
-    const string private_code_dev = "m9qzrEV7pkuwfEsLntF7GgpueMndNFZE2tA0sOAUauXQ";
-    const string public_code_dev = "6101fb408f40bb8ea04c552e";
+    //   lb/kJfFNNyzNEqISCqJhhhC4gJXIzbWfZQEuBkFbJkUPP6w
+    const string private_code_dev = "kJfFNNyzNEqISCqJhhhC4gJXIzbWfZQEuBkFbJkUPP6w";
+    const string public_code_dev = "61057628778d3cc600517b4a";
 
-    // lb/AYFGF2ldkkyBUi7yedIrMQkrkXbJJG3kemZgMB_ocSTQ
-    const string private_code_fin = "AYFGF2ldkkyBUi7yedIrMQkrkXbJJG3kemZgMB_ocSTQ";
-    const string public_code_fin = "6101fb658f40bb8ea04c554a";
+    // lb/dVJJ_zpoxkmgZcUNc6aHFA0L-szcMhv0qEzr24Sd6Uaw
+    const string private_code_fin = "dVJJ_zpoxkmgZcUNc6aHFA0L-szcMhv0qEzr24Sd6Uaw";
+    const string public_code_fin = "61057645778d3cc600517b4d";
 
     const string web_url = "http://dreamlo.com/lb/";
     public Entry[] high_scores;
@@ -108,6 +109,7 @@ public class HighScores : MonoBehaviour
             case ("fin"): { pc = private_code_fin; break; }
 
         }
+        //Debug.Log("upload starting");
 
         UnityWebRequest www = new UnityWebRequest(web_url + pc + "/add/" + UnityWebRequest.EscapeURL(username) + "/" + score);
         //WWW www = new WWW(web_url + private_code_vic + "/add/" + WWW.EscapeURL(username) + "/" + score);
@@ -142,7 +144,17 @@ public class HighScores : MonoBehaviour
             Debug.LogWarning("download succesfull:" + www.downloadHandler.text);    //if(SceneSwitcher.instance.is_debugging) 
             FormatHighscore(www.downloadHandler.text);
         }
-        else Debug.LogWarning("upload error: " + www.error);
+        else { 
+            Debug.LogWarning("upload error: " + www.error);
+            if (www.error == "HTTP/1.1 503 Service Unavailable") 
+            {
+                Menu.instance.board_vic.text = "if you're seeing this, HighScore servers are down :c";
+                Menu.instance.board_fin.text = "if you're seeing this, HighScore servers are down :c";
+                Menu.instance.board_emo.text = "if you're seeing this, HighScore servers are down :c";
+                Menu.instance.board_dev.text = "if you're seeing this, HighScore servers are down :c";
+
+            } 
+        }
         download_finished = true;
     }
 
@@ -170,6 +182,8 @@ public class HighScores : MonoBehaviour
     //downloads all the leaderboards asynchronously
     IEnumerator SmoothedLeaderDownloader()
     {
+        //Debug.Log("smoother");
+
         string output = "";
 
         DownloadHighscores("vic");
@@ -211,7 +225,7 @@ public class HighScores : MonoBehaviour
         }
         //Debug.Log("F:" + output);
         Menu.instance.board_fin.text = output;
-
+        Debug.Log("smooth finish");
     }
 
 

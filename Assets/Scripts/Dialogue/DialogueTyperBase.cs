@@ -145,6 +145,11 @@ public class DialogueTyperBase : MonoBehaviour
         AudioHandler.PlayMusic(audio, true);
         
     }
+    public void SwapInSmallEnemyAudio(AudioClip audio, bool should_loop)
+    {
+        AudioHandler.PlayMusic(audio, should_loop);
+
+    }
     public void SwapInEmpty()
     {
         if (GameObject.Find("Frame_Enemy").TryGetComponent<Image>(out Image SR))

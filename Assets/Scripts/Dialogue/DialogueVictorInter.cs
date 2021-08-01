@@ -29,7 +29,6 @@ public class DialogueVictorInter : DialogueTyperBase
                 break;
             case 3:
                 SwapInResize(0.6f);
-                //SwapInSmallEnemyGraphic("victorian flut_angry");
                 SwapInSmallEnemyGraphic("victorian flut_happy");
                 txt.color = col_victoria;
                 font = Resources.Load<Font>("Fonts/Olondon_");
@@ -59,6 +58,7 @@ public class DialogueVictorInter : DialogueTyperBase
                 Coroutine();
                 break;
             case 7:
+                SwapInSmallEnemyAudio(Resources.Load<AudioClip>("victoriantheme") as AudioClip);
                 SwapInResize(1f);
                 SwapInSmallEnemyGraphic("victorian flut_angry");
                 txt.color = col_victoria;
@@ -188,14 +188,6 @@ public class DialogueVictorInter : DialogueTyperBase
                 Debug.LogWarning("overextending dialogue!");
                 break;
         }
-    }
-    public override void Initialise()
-    {
-        base.Initialise();
-
-        SwapInSmallEnemyAudio(Resources.Load<AudioClip>("victoriantheme") as AudioClip);
-        //SwapInSmallEnemyGraphic("victorian flut_happy");
-        //SwapInSmallEnemyGraphic("victorian flut_angry");
     }
 
 }

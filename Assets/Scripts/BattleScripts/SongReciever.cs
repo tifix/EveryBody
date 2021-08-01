@@ -61,6 +61,7 @@ public class SongReciever : MonoBehaviour
         }
 
         Debug.LogWarning("song finished"+Time.time);
+        if (DialogueOnCompletion == "outro") { try { Devil_ting.instance.Ting(); } catch { Debug.Log("not final scene"); } }
 
         yield return new WaitForSeconds(final_cool_off);
         SceneSwitcher.instance.LoadSceneDialogue(DialogueOnCompletion); //load fight outro dialogue

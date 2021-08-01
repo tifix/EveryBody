@@ -107,6 +107,7 @@ public class DialogueEmoIntro : DialogueTyperBase
                 Coroutine();
                 break;
             case 15:
+                SwapInSmallEnemyAudio(Resources.Load<AudioClip>("emotheme") as AudioClip);
                 SwapInEmpty();
                 txt.color = col_emo;
                 font = Resources.Load<Font>("Fonts/old evils");
